@@ -1,0 +1,3 @@
+We always end up making a controller object of some kind in our game maker games. And I greatly prefer binary input only controllers, so we should make something that can be used/reused in any sort of binary input only, gamepad style game. 
+
+Let's first try and articulate the functionality we want this thing to have. Ideally all we would need to do as the programmer is add "actions" to the object that can be mapped to game pad and/or keyboard inputs. So far I've always had an option for keyboard and controller, so we should keep that up. That is to say, this object isn't just for gamepads, it's for keyboards as well. After setting up the controller, we would be able to call some sort of script that checks the "down" and "pressed" status of an action. 
