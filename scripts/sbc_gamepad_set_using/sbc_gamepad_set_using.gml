@@ -1,5 +1,7 @@
 /// @description Determine whether gamepad or keyboard is being used. Sets sbc_gamepad_using.
 
+sbc_ensureinit();
+
 // If no gamepadID has been determined, poll devices to find one.
 
 // check all buttons
@@ -26,7 +28,7 @@ if (global.sbc_gamepad_id == undefined) {
 	{
 		for (var k = 0; k < gamepad_axis_count(i); k++) 
 		{
-			if (abs(gamepad_axis_value(i, k)) > global.sbc_gamepad_axis_deadzone) 
+			if (abs(gamepad_axis_value(i, k)) > global.sbc_gamepad_deadzone) 
 			{
 				global.sbc_gamepad_id = i;
 				k = gamepad_axis_count(i);
@@ -57,7 +59,7 @@ if (global.sbc_gamepad_id != undefined)
 {
 	for (var i = 0; i < gamepad_axis_count(global.sbc_gamepad_id); i++) 
 	{
-		if (abs(gamepad_axis_value(global.sbc_gamepad_id, i)) > global.sbc_gamepad_axis_deadzone) 
+		if (abs(gamepad_axis_value(global.sbc_gamepad_id, i)) > global.sbc_gamepad_deadzone) 
 		{
 			global.sbc_gamepad_using = true;
 			i = gamepad_axis_count(global.sbc_gamepad_id);

@@ -170,4 +170,4 @@ enum SBC_AXISPREV
 }
 
 global.sbc_gamepad_axis_prev = array_create(SBC_AXISPREV.SIZE);
-global.sbc_gamepad_axis_deadzone = 0.5;
+global.sbc_gamepad_deadzone = 0.5;

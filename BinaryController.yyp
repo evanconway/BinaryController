@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "74600e6b-eb23-4ddf-8abf-062e9347ceb2",
+            "Value": {
+                "id": "31eb9a27-a947-47a0-8e90-ec21b136b8fe",
+                "resourcePath": "scripts\\sbc_gamepad_set_axis_prev\\sbc_gamepad_set_axis_prev.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7dc83166-68b9-45f0-819a-c026a83c07c8",
             "Value": {
                 "id": "b3efd6eb-5e70-41be-8502-229985755743",
@@ -239,6 +247,14 @@
             }
         },
         {
+            "Key": "e94bbb3f-0293-4733-bf87-5d9786f90e37",
+            "Value": {
+                "id": "88beb9a7-8551-4f75-9a16-9bce6f57adf3",
+                "resourcePath": "scripts\\sbc_gamepad_down\\sbc_gamepad_down.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e9d54163-eaa6-4875-95ce-60667b493bb5",
             "Value": {
                 "id": "77a1db93-d78e-462d-8ffd-97f453e16c5f",
@@ -263,7 +279,9 @@
         "e9d54163-eaa6-4875-95ce-60667b493bb5",
         "e6fcc9e3-1160-425a-84a8-20b0da0a05a7",
         "0b24bdb6-af81-4f0c-96bc-10b676978d4d",
-        "06bf0ecd-d303-4aba-a10e-545909c80ef1"
+        "06bf0ecd-d303-4aba-a10e-545909c80ef1",
+        "74600e6b-eb23-4ddf-8abf-062e9347ceb2",
+        "e94bbb3f-0293-4733-bf87-5d9786f90e37"
     ],
     "tutorial": ""
 }
