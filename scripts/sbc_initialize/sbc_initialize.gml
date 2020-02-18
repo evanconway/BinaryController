@@ -14,10 +14,12 @@ value. This lets us assign multiple inputs to one action.
 global.sbc_mappings_keyboard = ds_map_create();
 global.sbc_mappings_gamepad = ds_map_create();
 
-global.sbc_usinggamepad = false;
+global.sbc_gamepad_using = false; // using gamepad or keyboard
+global.sbc_gamepad_id = undefined;
 
 // custom enums to make adding actions easier/clearer
-enum SBC_GAMEPAD {
+enum SBC_GAMEPAD 
+{
 	LS_UP,
 	LS_DOWN,
 	LS_LEFT,
@@ -45,7 +47,8 @@ enum SBC_GAMEPAD {
 	SIZE
 }
 
-enum SBC_KEYBOARD {
+enum SBC_KEYBOARD 
+{
 	A,
 	B,
 	C,
@@ -148,5 +151,23 @@ enum SBC_KEYBOARD {
 	F16,
 	F17,
 	F18,
-	F19
+	F19,
+	SIZE
 }
+
+// we need to keep track of axis values previous frame (for determinig pressed)
+enum SBC_AXISPREV 
+{
+	LS_UP,
+	LS_DOWN,
+	LS_LEFT,
+	LS_RIGHT,
+	RS_UP,
+	RS_DOWN,
+	RS_LEFT,
+	RS_RIGHT,
+	SIZE
+}
+
+global.sbc_gamepad_axis_prev = array_create(SBC_AXISPREV.SIZE);
+global.sbc_gamepad_axis_deadzone = 0.5;
