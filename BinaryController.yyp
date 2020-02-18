@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "7236a845-9670-4933-a213-271e4bf26d15",
+            "Value": {
+                "id": "73b902db-434f-4973-b3bf-79648fbee819",
+                "resourcePath": "scripts\\sbc_gamepad_pressed\\sbc_gamepad_pressed.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "74600e6b-eb23-4ddf-8abf-062e9347ceb2",
             "Value": {
                 "id": "31eb9a27-a947-47a0-8e90-ec21b136b8fe",
@@ -281,7 +289,8 @@
         "0b24bdb6-af81-4f0c-96bc-10b676978d4d",
         "06bf0ecd-d303-4aba-a10e-545909c80ef1",
         "74600e6b-eb23-4ddf-8abf-062e9347ceb2",
-        "e94bbb3f-0293-4733-bf87-5d9786f90e37"
+        "e94bbb3f-0293-4733-bf87-5d9786f90e37",
+        "7236a845-9670-4933-a213-271e4bf26d15"
     ],
     "tutorial": ""
 }
