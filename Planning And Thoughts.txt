@@ -1,3 +1,43 @@
+This is not supposed to be an organized document. This is my way of getting my thoughts articulated so I can for a plan of action.
+
 We always end up making a controller object of some kind in our game maker games. And I greatly prefer binary input only controllers, so we should make something that can be used/reused in any sort of binary input only, gamepad style game. 
 
-Let's first try and articulate the functionality we want this thing to have. Ideally all we would need to do as the programmer is add "actions" to the object that can be mapped to game pad and/or keyboard inputs. So far I've always had an option for keyboard and controller, so we should keep that up. That is to say, this object isn't just for gamepads, it's for keyboards as well. After setting up the controller, we would be able to call some sort of script that checks the "down" and "pressed" status of an action. 
+Let's first try and articulate the functionality we want this thing to have. Ideally all we would need to do as the programmer is add "actions" to the object that can be mapped to game pad and/or keyboard inputs. So far I've always had an option for keyboard and controller, so we should keep that up. That is to say, this object isn't just for gamepads, it's for keyboards as well. After setting up the controller, we would be able to call some sort of script that checks the "down" and "pressed" status of an action. Actually, that's basically everything it does: add actions and check the status of the mapped input. We should flesh out how we setup the controller.
+
+First we need to "make" the controller in the project, which brings us to an important question: does this controller need to be an object? Or can it be a bunch of scripts? If we do it as scripts, we will have to use global vars. The reason I'm considering just using scripts is because we need to make a bunch of scripts anyway. Using an object may not cut down the number of scripts we use at all. Also, we have to make the controller object persistent. Is there really a difference between using global vars, and a persistent object? I'm not sure. How about, just for the challenge of it, let's try only using scripts. If it doesn't work out will use an object.
+
+So, we need a script that actually "generates" the controller. This is all going to feel a bit abstract since there won't be an actual GM object. Let's rattle off some variables we know the controller will need:
+
+ds_list actions // probably not needed, explained below.
+
+usinggamepad
+
+ds_map gamepad_mappings
+ds_map keyboard_mappings
+
+ds_map gamepad_down
+ds_map gamepad_pressed
+ds_map keyboard_down
+ds_map keyboard_pressed
+
+We know we're going to have a script that updates the controller. During this update we will set the states of the down and pressed maps. We need a map of what every action is bound to, for both keyboard and gamepad. I'm not sure if we actually need a list of actions though... For every action we'll have a keyboard and a gamepad mapping, and I don't know if the controller really needs to keep track of what actions/keys there are for each map. It's actually kind of an interesting question because the user is going to need a way to store and reference their actions. Is there a way we can make that easier for them? Perhaps we can revisit this thought we dive into the code more. I think for now the best we can do is allow the user to choose any variable type as their "key" for actions. Given that, I don't think we do actually need a list of actions in the controller. We also want an infinite number of buttons mappable to an action. That's kind of silly, because input devices don't have an infinite number of buttons. But it's good programming practice. 
+
+If we allow for infinite buttons per action, then we need a re sizable data structure to store all the different buttons for each action. And I guess that's a list. So I suppose our mapping data structure will actually have the "key" (the action), and then the value will be a list of buttons. 
+
+Hopefully those are truly the only variables we need. Next, and probably lastly, is scripts. I'm going to write them down in the order I think we'd need them.
+
+// public
+initialize()
+action_add(gp_button, kb_button)
+action_addmapping_gp(gp_button)
+action_addmapping_kb(kb_button)
+action_deletemapping_gp(gp_button)
+action_deletemapping_kb(kb_button)
+down(action)
+pressed(action)
+
+// private
+
+
+
+
