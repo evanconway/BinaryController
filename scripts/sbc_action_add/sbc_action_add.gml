@@ -14,6 +14,7 @@ if (ds_map_exists(global.sbc_actions, _action))
 }
 
 ds_map_add(global.sbc_actions, _action, array_create(2));
+ds_map_add(global.sbc_actions_prev, _action, array_create(2));
 ds_map_add(global.sbc_mappings_keyboard, _action, ds_list_create);
 ds_map_add(global.sbc_mappings_gamepad, _action, ds_list_create);
 

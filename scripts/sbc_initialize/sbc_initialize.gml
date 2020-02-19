@@ -7,6 +7,11 @@ like string or an enumerator. The value of the map is a 2 length array, the 0 in
 stores the down state, and the 1 index stores the pressed state. 
 */
 global.sbc_actions = ds_map_create();
+/* 
+The actions_prev stores the "down" value of each action the previous frame. This
+is used to determine if an action is "pressed".
+*/
+global.sbc_actions_prev = ds_map_create();
 /*
 Both of the mapping maps use an action as the key, and a resizable list as the 
 value. This lets us assign multiple inputs to one action.
@@ -16,6 +21,10 @@ global.sbc_mappings_gamepad = ds_map_create();
 
 global.sbc_gamepad_using = false; // using gamepad or keyboard
 global.sbc_gamepad_id = undefined;
+global.sbc_gamepad_deadzone = 0.5;
+
+// we need to keep track of axis values previous frame (for determinig pressed)
+global.sbc_gamepad_axis_prev = array_create(8);
 
 // custom enums to make adding actions easier/clearer
 enum SBC_GAMEPAD 
@@ -44,7 +53,6 @@ enum SBC_GAMEPAD
 	BUMPER_L,
 	START,
 	SELECT,
-	SIZE
 }
 
 enum SBC_KEYBOARD 
@@ -87,7 +95,7 @@ enum SBC_KEYBOARD
 	ROW_0,
 	ESC,
 	BACKSPACE,
-	ENTER,
+	RETURN,
 	TAB,
 	UP,
 	DOWN,
@@ -101,7 +109,7 @@ enum SBC_KEYBOARD
 	SHIFTR,
 	TILDE,
 	MINUS,
-	EQUALS,
+	PLUS,
 	BRACE_OPEN,
 	BRACE_CLOSE,
 	BACKSLASH,
@@ -126,13 +134,12 @@ enum SBC_KEYBOARD
 	PAD_8,
 	PAD_9,
 	PAD_0,
-	PAD_EQUAL,
-	PAD_SLASH,
-	PAD_ASTERISK,
-	PAD_MINUS,
-	PAD_PLUS,
+	PAD_SUBTRACT,
+	PAD_ADD,
+	PAD_MULTIPLY,
+	PAD_DIVIDE,
 	PAD_ENTER,
-	PAD_PERIOD,
+	PAD_DECIMAL,
 	F1,
 	F2,
 	F3,
@@ -152,22 +159,9 @@ enum SBC_KEYBOARD
 	F17,
 	F18,
 	F19,
-	SIZE
+	F20,
+	F21,
+	F22,
+	F23,
+	F24
 }
-
-// we need to keep track of axis values previous frame (for determinig pressed)
-enum SBC_AXISPREV 
-{
-	LS_UP,
-	LS_DOWN,
-	LS_LEFT,
-	LS_RIGHT,
-	RS_UP,
-	RS_DOWN,
-	RS_LEFT,
-	RS_RIGHT,
-	SIZE
-}
-
-global.sbc_gamepad_axis_prev = array_create(SBC_AXISPREV.SIZE);
-global.sbc_gamepad_deadzone = 0.5;

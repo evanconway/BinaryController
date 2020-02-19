@@ -1,5 +1,5 @@
-/// @description Returns true if given button is pressed.
-/// @param button
+/// @description Returns true if given gamepad_enum is pressed.
+/// @param sbc_gamepad_enum
 
 sbc_ensureinit();
 

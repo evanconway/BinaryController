@@ -1,5 +1,5 @@
-/// @description Returns true if given button is down.
-/// @param button
+/// @description Returns true if given gamepad_enum is down.
+/// @param sbc_gamepad_enum
 
 sbc_ensureinit();
 

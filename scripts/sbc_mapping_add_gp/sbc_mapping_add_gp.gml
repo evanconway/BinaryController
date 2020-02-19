@@ -1,6 +1,6 @@
 /// @description Add button to action mapping for gamepad
 /// @param action
-/// @param input
+/// @param sbc_gamepad_enum
 
 sbc_ensureinit();
 

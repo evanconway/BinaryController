@@ -8,7 +8,7 @@ First we need to "make" the controller in the project, which brings us to an imp
 
 So, we need a script that actually "generates" the controller. This is all going to feel a bit abstract since there won't be an actual GM object. Let's rattle off some variables we know the controller will need:
 
-ds_list actions // probably not needed, explained below.
+ds_map actions // probably not needed, explained below.
 
 usinggamepad
 
@@ -28,16 +28,25 @@ Hopefully those are truly the only variables we need. Next, and probably lastly,
 
 // public
 initialize()
-action_add(gp_button, kb_button)
+update()
+action_add(gp_button, kb_button) //force the user to add one mapping
 action_addmapping_gp(gp_button)
 action_addmapping_kb(kb_button)
 action_deletemapping_gp(gp_button)
 action_deletemapping_kb(kb_button)
+setdeadzone(number)
 down(action)
 pressed(action)
 
 // private
+gamepad_down(gp_enum)
 
+We may not actually need that many private scripts. Also, note that GM doesn't technically have "private". I just mean scripts that the user won't call, and are only used by the controller class. Game Maker has insufficient scripts for all the input stuff we want to do, we always end up making our own game pad enumerator and scripts for checking user input. I think we have to do the same thing for the keyboard as well. 
 
+I think that's everything we'd need. The only thing left is to explain how everything will work. And that's actually pretty straightforward. 
 
+calling initialize() will create all of the global variables we'll be using. Calling action_add("action") will add a new entry to the actions map. I don't know if we wrote this down, but I realized the actions map should be a map where the key is the action, and the value is a boolean array, 2 elements long. The first element will store the "down" value and the second will store the "pressed" value. When the update function is called, these values will be set. To determine the values we will use a combination of our own scripts and game maker scripts to poll user input devices. 
 
+Originally, I was hoping we wouldn't even need to call an "update()" script every frame, but I don't see a way around it. In order to determine whether or not an analog stick has been "pressed", we need to store the previous value of it somewhere. Unfortunately, GM does not do this for us, so we need some sort of function that logs it. And, if we're going to have a function that logs it (which has to be called at the beginning of every frame), then we might as well execute all the button checking logic there. That way, our update function will have set all the down and pressed values in our actions map, so our check button scripts will be dead simple. They just check the value in the map. 
+
+There is just one last thing to figure out: what should we call this? I have half a mind to put this on the game maker market place when I'm done. There don't appear to be anything there that does what I'm trying to do. Therefore, I want to be confident in the name. It should make it immediately clear what it does. It should definitely have "binary" in the name since that's a key element. Maybe we should just call it binary controller. However we do want a good acronym that we can use at the start of each script call. Maybe we could use simple binary controller (SBC). 

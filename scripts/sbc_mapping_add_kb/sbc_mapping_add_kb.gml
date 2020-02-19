@@ -1,6 +1,6 @@
 /// @description Add button to action mapping for keyboard
 /// @param action
-/// @param input
+/// @param sbc_keybaord_enum
 
 sbc_ensureinit();
 

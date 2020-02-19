@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "03000d1a-04e1-4579-80f4-2084e0b19a23",
+            "Value": {
+                "id": "e0f66792-2ea9-4a76-9660-34c41407a2dc",
+                "resourcePath": "scripts\\sbc_gamepad_set_axis_prev\\sbc_gamepad_set_axis_prev.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "050aaeb5-7242-4ae1-b12e-7ed56cc2c009",
             "Value": {
                 "id": "ef6565c2-ae84-4171-8ad8-b79c0544500f",
@@ -119,6 +127,14 @@
             }
         },
         {
+            "Key": "20f8082a-a3b0-4a6d-983d-8adf64995011",
+            "Value": {
+                "id": "d5a5a5b8-2d04-4653-b6e4-f2d8ff675ec8",
+                "resourcePath": "scripts\\sbc_keyboard_down\\sbc_keyboard_down.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2fa3add8-1ca8-4002-8f8a-a793f937147a",
             "Value": {
                 "id": "02ede273-28cb-484d-993f-108f499b2227",
@@ -175,14 +191,6 @@
             }
         },
         {
-            "Key": "74600e6b-eb23-4ddf-8abf-062e9347ceb2",
-            "Value": {
-                "id": "31eb9a27-a947-47a0-8e90-ec21b136b8fe",
-                "resourcePath": "scripts\\sbc_gamepad_set_axis_prev\\sbc_gamepad_set_axis_prev.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "7dc83166-68b9-45f0-819a-c026a83c07c8",
             "Value": {
                 "id": "b3efd6eb-5e70-41be-8502-229985755743",
@@ -212,6 +220,14 @@
                 "id": "6073b026-07dd-44ba-9483-64da9c1f03b0",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "a981b9da-e335-4062-aecc-ac8bdd866b88",
+            "Value": {
+                "id": "1f3b9de7-33d2-4e63-9fd2-35566236522f",
+                "resourcePath": "scripts\\sbc_keyboard_pressed\\sbc_keyboard_pressed.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -296,9 +312,11 @@
         "e6fcc9e3-1160-425a-84a8-20b0da0a05a7",
         "0b24bdb6-af81-4f0c-96bc-10b676978d4d",
         "06bf0ecd-d303-4aba-a10e-545909c80ef1",
-        "74600e6b-eb23-4ddf-8abf-062e9347ceb2",
+        "03000d1a-04e1-4579-80f4-2084e0b19a23",
         "e94bbb3f-0293-4733-bf87-5d9786f90e37",
         "7236a845-9670-4933-a213-271e4bf26d15",
+        "20f8082a-a3b0-4a6d-983d-8adf64995011",
+        "a981b9da-e335-4062-aecc-ac8bdd866b88",
         "050aaeb5-7242-4ae1-b12e-7ed56cc2c009"
     ],
     "tutorial": ""

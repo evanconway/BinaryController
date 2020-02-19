@@ -1,6 +1,6 @@
 /// @description Remove button from action mapping for keyboard
 /// @param action
-/// @param input
+/// @param sbc_keyboard_enum
 
 sbc_ensureinit();
 
