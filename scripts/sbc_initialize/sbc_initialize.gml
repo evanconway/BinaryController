@@ -1,15 +1,14 @@
 /// @description Initializes global variables for Simple Binary Controller
 
 /*
-The actions map stores the "down", and "pressed" state of all actions. The key
+The actions map stores the "down" state of all actions. The key
 for the map is the name of the action. This value can be any type the user chooses,
-like string or an enumerator. The value of the map is a 2 length array, the 0 index
-stores the down state, and the 1 index stores the pressed state. 
+like string or an enumerator.
 */
 global.sbc_actions = ds_map_create();
 /* 
-The actions_prev stores the "down" value of each action the previous frame. This
-is used to determine if an action is "pressed".
+The actions_prev stores the boolean "down" value of each action the previous frame. 
+This is used to determine if an action is "pressed".
 */
 global.sbc_actions_prev = ds_map_create();
 /*

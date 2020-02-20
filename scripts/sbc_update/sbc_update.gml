@@ -1,4 +1,4 @@
-/// @description Sets all down and pressed values for Simple Binary Controller
+/// @description Sets all down values for Simple Binary Controller
 
 sbc_ensureinit();
 
@@ -10,9 +10,8 @@ for (var key = ds_map_find_first(global.sbc_actions); key != undefined; key = ds
 	var _buttons = ds_map_find_value(_mapping, key); // buttons is a ds_list
 	
 	/*
-	Here we check the status of all buttons mapped to the action. If any of them are down, the action 
-	is considered down. For any actions that are down, but were not down the previous frame, the action
-	is also set to pressed.
+	Check the status of all buttons mapped to the action. If any of them are down, the action 
+	is considered down.
 	*/
 	var _down = false;
 	for (var i = 0; i < ds_list_size(_buttons); i++)
@@ -24,12 +23,14 @@ for (var key = ds_map_find_first(global.sbc_actions); key != undefined; key = ds
 		}
 		else
 		{
-			if ()
+			if (sbc_keyboard_down(_button)) _down = true;
 		}
-		
 	}
+	
+	ds_map_set(global.sbc_actions, key, _down);
 }
 
+// set previous frame values
 sbc_gamepad_set_axis_prev();
 for (var key = ds_map_find_first(global.sbc_actions); key != undefined; key = ds_map_find_next(global.sbc_actions, key)) 
 {

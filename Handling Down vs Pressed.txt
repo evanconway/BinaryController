@@ -1,0 +1,15 @@
+Game Maker already has a bunch of scripts for determining of a key or button has been pressed. But it lacks a script for determining the previous value of an axis. This means we have to manually determine whether or not an axis has been "pressed".
+
+Now, this is what we've done in previous projects, but there appears to be an issue with this. To determine if an axis has been pressed, we have to compare the previous frames values against the current "down" values. At the end of all of our logic, we have to call a script that sets the current down values to the values in our previous values array. However, in order to set the down values for our simple binary controller, we have to call the update script at the very start of every frame. If we try to assign the previous axis values at the end of the update script, then any checks for pressed on gamepad axis will be incorrect for the rest of the frame. To put it another way, it means that our gamepad_pressed script will only work in the middle of the update script.
+
+This is not helpful to our users. We want our regular sbc_down and sbc_gamepad/keyboard_down scripts to be callable anytime after sbc_update is called, and from anywhere. This means we'll have to redo a lot of stuff.
+
+Let's flesh out how the sbc_action will be handled. To check if an sbc_action is down, all we need to do check all bindings for that action. If any of them are down, then the action is down. But to check pressed, we will need an array of the down values from last frame....
+
+Wait a second. I've been stuck on the idea that the "update" has to be called at the beginning of logic. What if we allowed it to be called at the end? I dunno if the end user would be ok with that, but let's think about this for a minute...
+
+If we used an array to store the previous frames down values of sbc_actions and game pad axis, then we could still use our regular down scripts, and most of the game maker pressed scripts. For checking pressed on sbc_actions, we could just compare the current sbc_down against the down values of the previous frame. Same with the axis. 
+
+I think that's the correct solution. Obviously we still have our wrapper scripts that use enums instead of gm codes, but this simplifies the pressed issue. We store just the sbc_action and axis down values at the end of each logic step. So the only quirk is we're asking the user to manually call an update script at the end of their logic. I think that's probably fine.
+
+Ooh, actually I have another idea. Perhaps we should switch all the logic over to an object, instead of just scripts. And we'll handle this update function in the end_step even of the object. BUT! We can give the user the ability to disable the end_step update, and manually update it themselves. Yes. I like this idea. The best. 
