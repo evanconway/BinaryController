@@ -1,22 +1,26 @@
 /* 
 The actions_prev stores the boolean "down" value of each action from the previous 
-frame. This is used to determine if an action is "pressed".
+frame. This is used to determine if an action is "pressed". The pressed values for
+actions are stored in the actions_pressed map. For both these maps, the key is the
+action, the value is a boolean
 */
 sbc_actions_prev = ds_map_create();
+sbc_actions_pressed = ds_map_create();
 /*
 For both of the maps: an action as the key, and a resizable list as the 
 value. This lets us assign multiple inputs to one action.
 */
 sbc_mappings_keyboard = ds_map_create();
 sbc_mappings_gamepad = ds_map_create();
-
 sbc_gamepad_using = false; // using gamepad or keyboard
 sbc_gamepad_id = undefined;
 sbc_gamepad_deadzone = 0.5;
-
-// we need to keep track of axis values previous frame (for determinig pressed)
+/*
+We need to keep track of axis values previous frame (for determinig pressed).
+Both of these arrays are assigned during the update.
+*/
 sbc_gamepad_axis_prev = array_create(8);
-
+sbc_gamepad_axis_pressed = array_create(8);
 // custom enums to make adding actions easier/clearer
 enum SBC_GAMEPAD 
 {

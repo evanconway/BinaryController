@@ -13,3 +13,24 @@ If we used an array to store the previous frames down values of sbc_actions and 
 I think that's the correct solution. Obviously we still have our wrapper scripts that use enums instead of gm codes, but this simplifies the pressed issue. We store just the sbc_action and axis down values at the end of each logic step. So the only quirk is we're asking the user to manually call an update script at the end of their logic. I think that's probably fine.
 
 Ooh, actually I have another idea. Perhaps we should switch all the logic over to an object, instead of just scripts. And we'll handle this update function in the end_step even of the object. BUT! We can give the user the ability to disable the end_step update, and manually update it themselves. Yes. I like this idea. The best. 
+
+3/12/2020
+
+After much too much time away, we're coming back to this. We need to revisit the idea of the pushed vs pressed logic. We want this object to only require a single "update" call. Originally I had planned to put that at the beginning of the step... but maybe it makes more sense to put it at the end? When it comes to push/down inputs, we don't need any special data. The pressed input, however, needs to be able to compare the current "down" data vs the "down" data from the previous frame. And tbh, the place it makes the most sense to set that data, is at the end of each frame. So perhaps the update call should be at the end. 
+
+So summarize. At the end of each step/frame, we will set an array of down_prev values to the current down values. And all controller object calls must be made before this update call is made during a frame. 
+
+OH... but wait. I just looked at our code again. At the beginning of each frame, we check to see if the game is using the gamepad, or a keyboard. This means we have to call the update at the beginning. So how can we re-work our logic so that we can store the data for "pressed"? Here's a thought. We do have a "previous frame" array for down data, but we also keep an array of "pressed" data. What we'll do at the start of each frame is compar the previous down data agains the current down data, and set the result to the pressed array. And then we'll assign the current down data to the previous down data. This means the "previous down" array isn't used for the rest of the frame.
+
+Ok... but here's another thought... We want scripts for determining whether or not ANY button/key has been pressed. Not just the actions the user adds. And remember, the only inputs that are actually causing us trouble are the gamepad axis...
+
+So, what if the down/pressed scripts for game actions merely called the down/pressed scripts for buttons/keys. We already have scripts in place to store that data. But we use the pressed/prev_down arrays we described above for the gamepad axis only. For everything else we can just use the built in scripts!
+
+I like it. Let's summarize:
+
+for gamepad axis: pressed_array, prev_down_array
+pressed array values are set at the beginning of the frame by comparing the current down value with the value in prev_down_array. Then current down values are assigned to prev_down_array. When determining if an action has been pressed/down, we simply call our custom scripts for buttons, but with the assignments passed in. 
+
+UGH... but wait again. We're trying to store the down/pressed value of ACTIONS, not just buttons. This is to dissallow things like assigning two buttons to the same action, and repeatedly registering pressed inputs while holding a button down. This shouldn't be too hard to fix though... we can simply use a pressed_array and prev_down_array for actions as well as the gamepad axis. Our down script for actions will simply return true if any of the assigned buttons are down. And then we can simply compare the action prev_down_array against that to set the pressed_array values for actions. 
+
+There. That should work.

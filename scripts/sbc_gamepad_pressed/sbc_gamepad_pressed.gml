@@ -6,41 +6,34 @@ var result = false;
 with (global.simple_binary_controller)
 {
 	if (sbc_gamepad_id == undefined) exit;
-	// -1: button is not axis
-	//  0: button is axis, but not down
-	//  1: button is axis, and is down
-	var _axison = -1;
-	// switch for just axis
 	switch (argument[0]) 
 	{
+		// Axis values are assigned to their pressed array value. This array is set in the update script.	
 		case SBC_GAMEPAD.LS_UP:
-			_axison = gamepad_axis_value(sbc_gamepad_id, gp_axislv) < sbc_gamepad_deadzone * -1;
+			result = sbc_gamepad_axis_prev[SBC_GAMEPAD.LS_UP] && sbc_gamepad_down(SBC_GAMEPAD.LS_UP);
 		break;
 		case SBC_GAMEPAD.LS_DOWN:
-			_axison = gamepad_axis_value(sbc_gamepad_id, gp_axislv) > sbc_gamepad_deadzone;
+			result = sbc_gamepad_axis_prev[SBC_GAMEPAD.LS_DOWN] && sbc_gamepad_down(SBC_GAMEPAD.LS_DOWN);
 		break;
 		case SBC_GAMEPAD.LS_LEFT:
-			_axison = gamepad_axis_value(sbc_gamepad_id, gp_axislh) < sbc_gamepad_deadzone * -1;
+			result = sbc_gamepad_axis_prev[SBC_GAMEPAD.LS_LEFT] && sbc_gamepad_down(SBC_GAMEPAD.LS_LEFT);
 		break;
 		case SBC_GAMEPAD.LS_RIGHT:
-			_axison = gamepad_axis_value(sbc_gamepad_id, gp_axislh) > sbc_gamepad_deadzone;
+			result = sbc_gamepad_axis_prev[SBC_GAMEPAD.LS_RIGHT] && sbc_gamepad_down(SBC_GAMEPAD.LS_RIGHT);
 		break;
 		case SBC_GAMEPAD.RS_UP:
-			_axison = gamepad_axis_value(sbc_gamepad_id, gp_axisrv) < sbc_gamepad_deadzone * -1;
+			result = sbc_gamepad_axis_prev[SBC_GAMEPAD.RS_UP] && sbc_gamepad_down(SBC_GAMEPAD.RS_UP);
 		break;
 		case SBC_GAMEPAD.RS_DOWN:
-			_axison = gamepad_axis_value(sbc_gamepad_id, gp_axisrv) > sbc_gamepad_deadzone;
+			result = sbc_gamepad_axis_prev[SBC_GAMEPAD.RS_DOWN] && sbc_gamepad_down(SBC_GAMEPAD.RS_DOWN);
 		break;
 		case SBC_GAMEPAD.RS_LEFT:
-			_axison = gamepad_axis_value(sbc_gamepad_id, gp_axisrh) < sbc_gamepad_deadzone * -1;
+			result = sbc_gamepad_axis_prev[SBC_GAMEPAD.RS_LEFT] && sbc_gamepad_down(SBC_GAMEPAD.RS_LEFT);
 		break;
 		case SBC_GAMEPAD.RS_RIGHT:
-			_axison = gamepad_axis_value(sbc_gamepad_id, gp_axisrh) > sbc_gamepad_deadzone;
+			result = sbc_gamepad_axis_prev[SBC_GAMEPAD.RS_RIGHT] && sbc_gamepad_down(SBC_GAMEPAD.RS_RIGHT);
 		break;
-	}
-	if (_axison > 0 && !array_get(sbc_gamepad_axis_prev, argument[0])) result = true;
-	switch (argument[0]) 
-	{
+		// rest of buttons
 		case SBC_GAMEPAD.DP_UP:
 			result = gamepad_button_check_pressed(sbc_gamepad_id, gp_padu);
 		break;
