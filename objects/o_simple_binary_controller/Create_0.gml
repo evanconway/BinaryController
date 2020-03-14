@@ -1,11 +1,13 @@
-/* 
-The actions_prev stores the boolean "down" value of each action from the previous 
-frame. This is used to determine if an action is "pressed". The pressed values for
-actions are stored in the actions_pressed map. For both these maps, the key is the
-action, the value is a boolean
+// SIMPLE BINARY CONTROLLER
+// BY EVAN CONWAY
+
+/*
+The Simple Binary Controller is allows the user to quickly and easily add binary
+input to a game. In this context, binary input is an action that is either on,
+or off. The Simple Binary Controller works with both keyboard and directX 
+input devices. 
 */
-sbc_actions_prev = ds_map_create();
-sbc_actions_pressed = ds_map_create();
+
 /*
 For both of the maps: an action as the key, and a resizable list as the 
 value. This lets us assign multiple inputs to one action.
@@ -15,12 +17,27 @@ sbc_mappings_gamepad = ds_map_create();
 sbc_gamepad_using = false; // using gamepad or keyboard
 sbc_gamepad_id = undefined;
 sbc_gamepad_deadzone = 0.5;
+
 /*
-We need to keep track of axis values previous frame (for determinig pressed).
-Both of these arrays are assigned during the update.
+One of the main reasons for creating the SBC is dealing with gamepad axis. In 
+order to make the axis a digital input, we store the value of the previous
+frames "down" position of the axis, and compare it to the current. Then we
+store that result in the axis_pressed map. Both of these values are set during
+the update script, which should be called at the beginning of each frame. 
+
+The reason we store the pressed value, instead of only the prev down value, is
+to avoid the need for an update script at the beginning and end of each frame.
+At the beginning of the frame we need to check if they user is using the keyboard
+or a directX gamepad. But if we wanted to use the previous values to determine
+pressed, we would have to set those values at the end of the frame. By checking
+at the beginning, and storeing the result right away, we only need to call one
+update script at the beginning of the frame. 
 */
-sbc_gamepad_axis_prev = array_create(8);
-sbc_gamepad_axis_pressed = array_create(8);
+sbc_gamepad_axis_prev = array_create(8, false);
+sbc_gamepad_axis_pressed = array_create(8, false);
+// The same logic applies to storing values for actions. 
+sbc_actions_prev = ds_map_create();
+sbc_actions_pressed = ds_map_create();
 // custom enums to make adding actions easier/clearer
 enum SBC_GAMEPAD 
 {
@@ -88,6 +105,7 @@ enum SBC_KEYBOARD
 	ROW_8,
 	ROW_9,
 	ROW_0,
+	SPACE,
 	ESC,
 	BACKSPACE,
 	RETURN,

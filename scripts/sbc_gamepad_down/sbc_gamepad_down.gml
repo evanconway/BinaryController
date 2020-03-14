@@ -5,7 +5,7 @@ sbc_ensureinit();
 var result = false;
 with (global.simple_binary_controller)
 {
-	if (sbc_gamepad_id == undefined) exit;
+	if (sbc_gamepad_id == undefined) return false;
 	// -1: button is not axis
 	//  0: button is axis, but not down
 	//  1: button is axis, and is down

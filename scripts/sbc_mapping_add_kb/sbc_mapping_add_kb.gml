@@ -1,6 +1,6 @@
-/// @description Add button to action mapping for keyboard
+/// @description Add key to action mapping for keyboard
 /// @param action
-/// @param sbc_keybaord_enum
+/// @param sbc_keyboard_enum
 
 sbc_ensureinit();
 with (global.simple_binary_controller) 

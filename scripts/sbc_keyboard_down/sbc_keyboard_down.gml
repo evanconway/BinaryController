@@ -75,6 +75,8 @@ switch (argument[0])
 		return keyboard_check(ord("9"));
 	case SBC_KEYBOARD.ROW_0:
 		return keyboard_check(ord("0"));
+	case SBC_KEYBOARD.SPACE:
+		return keyboard_check(vk_space);
 	case SBC_KEYBOARD.ESC:
 		return keyboard_check(vk_escape);
 	case SBC_KEYBOARD.BACKSPACE:
