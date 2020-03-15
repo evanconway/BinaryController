@@ -20,7 +20,8 @@
         "050aaeb5-7242-4ae1-b12e-7ed56cc2c009",
         "02902549-c0f3-4a00-b6b5-94dc9a827e32",
         "877f6d9b-61fb-4beb-a9ac-fa494639f046",
-        "06bf0ecd-d303-4aba-a10e-545909c80ef1"
+        "06bf0ecd-d303-4aba-a10e-545909c80ef1",
+        "4ec6512d-840e-452d-b896-99822578487e"
     ],
     "filterType": "GMScript",
     "folderName": "Simple Binary Controller",

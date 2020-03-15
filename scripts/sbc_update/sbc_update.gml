@@ -1,4 +1,4 @@
-/// @description Sets all down previous values for Simple Binary Controller
+/// @description Sets all values for Simple Binary Controller
 
 sbc_ensureinit();
 sbc_gamepad_set_using();

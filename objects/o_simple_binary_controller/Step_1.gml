@@ -1,3 +1,3 @@
 /// @description Determine Keyboard or Gamepad
 
-sbc_update();
+if (sbc_autoupdate) sbc_update();

@@ -17,6 +17,7 @@ sbc_mappings_gamepad = ds_map_create();
 sbc_gamepad_using = false; // using gamepad or keyboard
 sbc_gamepad_id = undefined;
 sbc_gamepad_deadzone = 0.5;
+sbc_autoupdate = true;
 
 /*
 One of the main reasons for creating the SBC is dealing with gamepad axis. In 
