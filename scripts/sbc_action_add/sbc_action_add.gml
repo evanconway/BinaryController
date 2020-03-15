@@ -1,7 +1,7 @@
 /// @description Add new action to sbc_actions map
 /// @param action
-/// @param sbc_keyboard_enum(optional)
-/// @param sbc_gamepad_enum(optional)
+/// @param sbc_keyboard_enum bind(optional)
+/// @param sbc_gamepad_enum bind(optional)
 
 sbc_ensureinit();
 with (global.simple_binary_controller) 

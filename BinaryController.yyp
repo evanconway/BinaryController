@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "1a688c1c-5e89-49cf-89cf-6f6bcab8ef15",
+            "Value": {
+                "id": "3fb8f5dc-515e-4c9e-a112-3b6ae21e82bf",
+                "resourcePath": "scripts\\sbc_keyboard_lastpressed\\sbc_keyboard_lastpressed.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1b13a8ce-d293-4151-be0e-da9e4d7d8004",
             "Value": {
                 "id": "629741ad-1190-4405-a170-bcf2a1d2831b",
@@ -156,6 +164,14 @@
                 "id": "f35e6868-f85e-4e67-b735-1ba66f02af55",
                 "resourcePath": "views\\344f3a78-8941-4368-ab9a-8f41bf4aee62.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "37220892-07c9-4c31-b4b7-c2a1b41328a5",
+            "Value": {
+                "id": "f1293d31-7f9e-48f0-a8b7-21082f3df12d",
+                "resourcePath": "scripts\\sbc_gamepad_lastpressed\\sbc_gamepad_lastpressed.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -361,8 +377,10 @@
         "0b24bdb6-af81-4f0c-96bc-10b676978d4d",
         "e94bbb3f-0293-4733-bf87-5d9786f90e37",
         "7236a845-9670-4933-a213-271e4bf26d15",
+        "37220892-07c9-4c31-b4b7-c2a1b41328a5",
         "20f8082a-a3b0-4a6d-983d-8adf64995011",
         "a981b9da-e335-4062-aecc-ac8bdd866b88",
+        "1a688c1c-5e89-49cf-89cf-6f6bcab8ef15",
         "050aaeb5-7242-4ae1-b12e-7ed56cc2c009",
         "02902549-c0f3-4a00-b6b5-94dc9a827e32",
         "877f6d9b-61fb-4beb-a9ac-fa494639f046",

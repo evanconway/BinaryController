@@ -1,13 +1,19 @@
-/// @description Add button to action mapping for gamepad
+/// @description Add button to action mapping for gamepad, returns true if successful
 /// @param action
 /// @param sbc_gamepad_enum
 
 sbc_ensureinit();
 with (global.simple_binary_controller)
 {
+	var result = false;
 	if (!ds_map_exists(sbc_mappings_gamepad, argument0))
 	{
-		show_error("sbc_mapping_add_gp failed. Simple Binary Controller action does not exist!", true);
+		show_debug_message("sbc_mapping_add_gp failed. Simple Binary Controller action does not exist!");
 	}
-	ds_list_add(ds_map_find_value(sbc_mappings_gamepad, argument0), argument1);
+	else
+	{
+		ds_list_add(ds_map_find_value(sbc_mappings_gamepad, argument0), argument1);
+		result = true;
+	}
+	return result;
 }
