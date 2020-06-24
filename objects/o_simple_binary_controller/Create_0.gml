@@ -1,6 +1,8 @@
 // SIMPLE BINARY CONTROLLER
 // BY EVAN CONWAY
 
+// 23rd, June, 2020 huge update about to start!!
+
 /*
 The Simple Binary Controller (SBC) allows the user to quickly and easily add simple
 on/off style inputs to a game. SBC supports keyboard input and direct x 
