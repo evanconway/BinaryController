@@ -2,10 +2,27 @@
 // BY EVAN CONWAY
 
 /*
-The Simple Binary Controller is allows the user to quickly and easily add binary
-input to a game. In this context, binary input is an action that is either on,
-or off. The Simple Binary Controller works with both keyboard and directX 
-input devices. 
+The Simple Binary Controller (SBC) allows the user to quickly and easily add simple
+on/off style inputs to a game. SBC supports keyboard input and direct x 
+devices.
+
+QUICK START GUIDE
+
+sbc_action_add()
+Use this script to add an action to the controller. The action parameter in 
+this script is used as a key for a map. Therefore, the action can be any data 
+type, like a string or an enum, but all actions must be the same data type.
+
+sbc_mapping_add_kb()
+sbc_mapping_add_gp()
+Buttons can than be mapped to the actions using sbc_mapping_add_kb for keyboard
+input, and sbc_mapping_add_gp for gamepad input. The parameters for these scripts 
+are the action, and an SBC enum for the desired button or key. SBC uses its own
+enums in place of the game maker enums. The script will not work properly if you
+try to use a game maker enum in the arguments. 
+
+sbc_down() and sbc_pressed()
+Use these scripts to check if 
 */
 
 /*
@@ -39,6 +56,13 @@ sbc_gamepad_axis_pressed = array_create(8, false);
 // The same logic applies to storing values for actions. 
 sbc_actions_prev = ds_map_create();
 sbc_actions_pressed = ds_map_create();
+/*
+Notice that there is no list or map storing the actions. This is because we already
+end up storing prev and pressed values for every action. If we every need to iterate
+over every action, or check what actions are in the controller, we can simply use
+either the prev or pressed map of actions.
+*/
+
 // custom enums to make adding actions easier/clearer
 enum SBC_GAMEPAD 
 {
