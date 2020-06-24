@@ -66,7 +66,7 @@
             "Key": "06bf0ecd-d303-4aba-a10e-545909c80ef1",
             "Value": {
                 "id": "12b332ab-d0fe-4105-948a-507bd1046cd1",
-                "resourcePath": "scripts\\sbc_gamepad_set_using\\sbc_gamepad_set_using.yy",
+                "resourcePath": "scripts\\sbc_gamepad_determine_using\\sbc_gamepad_determine_using.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -84,6 +84,14 @@
                 "id": "ae7590f6-547f-429a-a5b9-bc5f4cbab11e",
                 "resourcePath": "views\\0f456ef6-336c-4b9d-bef5-26ab2b4f14cb.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "14fa47e6-3c4d-4076-bfdd-8e21559a256d",
+            "Value": {
+                "id": "776d6985-d7c1-4608-8a93-42fd605aaa5f",
+                "resourcePath": "scripts\\sbc_released\\sbc_released.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -175,6 +183,14 @@
             }
         },
         {
+            "Key": "46ae06ea-0a4e-423f-877d-ffe223139b33",
+            "Value": {
+                "id": "1a54c0ab-21a3-4ed0-8de0-5a07294501bd",
+                "resourcePath": "scripts\\sbc_keyboard_released\\sbc_keyboard_released.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4ec6512d-840e-452d-b896-99822578487e",
             "Value": {
                 "id": "1a5cb9ba-fdba-4821-b862-cb194d7e201a",
@@ -228,6 +244,14 @@
                 "id": "a3d4a01d-b48f-4e07-aef4-d4841beb92b3",
                 "resourcePath": "views\\6ffcb944-fcf6-436a-b003-914fdc922ce7.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7048ea61-52f9-4773-8b80-7324e3ad326a",
+            "Value": {
+                "id": "1683bda0-f2c4-4e02-8100-e97b8eae1be3",
+                "resourcePath": "scripts\\sbc_gamepad_released\\sbc_gamepad_released.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -393,13 +417,16 @@
         "0b24bdb6-af81-4f0c-96bc-10b676978d4d",
         "e94bbb3f-0293-4733-bf87-5d9786f90e37",
         "7236a845-9670-4933-a213-271e4bf26d15",
+        "7048ea61-52f9-4773-8b80-7324e3ad326a",
         "37220892-07c9-4c31-b4b7-c2a1b41328a5",
         "20f8082a-a3b0-4a6d-983d-8adf64995011",
         "a981b9da-e335-4062-aecc-ac8bdd866b88",
+        "46ae06ea-0a4e-423f-877d-ffe223139b33",
         "1a688c1c-5e89-49cf-89cf-6f6bcab8ef15",
         "050aaeb5-7242-4ae1-b12e-7ed56cc2c009",
         "02902549-c0f3-4a00-b6b5-94dc9a827e32",
         "877f6d9b-61fb-4beb-a9ac-fa494639f046",
+        "14fa47e6-3c4d-4076-bfdd-8e21559a256d",
         "06bf0ecd-d303-4aba-a10e-545909c80ef1",
         "4ec6512d-840e-452d-b896-99822578487e"
     ],

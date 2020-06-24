@@ -27,7 +27,7 @@ with (global.simple_binary_controller)
 		{
 			for (var k = 0; k < gamepad_axis_count(i); k++) 
 			{
-				if (abs(gamepad_axis_value(i, k)) > sbc_gamepad_deadzone) 
+				if (abs(gamepad_axis_value(i, k)) > sbc_deadzone) 
 				{
 					sbc_gamepad_id = i;
 					k = gamepad_axis_count(i);
@@ -55,7 +55,7 @@ with (global.simple_binary_controller)
 	{
 		for (var i = 0; i < gamepad_axis_count(sbc_gamepad_id); i++) 
 		{
-			if (abs(gamepad_axis_value(sbc_gamepad_id, i)) > sbc_gamepad_deadzone) 
+			if (abs(gamepad_axis_value(sbc_gamepad_id, i)) > sbc_deadzone) 
 			{
 				sbc_gamepad_using = true;
 				i = gamepad_axis_count(sbc_gamepad_id);

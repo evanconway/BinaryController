@@ -35,34 +35,21 @@ sbc_mappings_keyboard = ds_map_create();
 sbc_mappings_gamepad = ds_map_create();
 sbc_gamepad_using = false; // using gamepad or keyboard
 sbc_gamepad_id = undefined;
-sbc_gamepad_deadzone = 0.5;
+sbc_deadzone = 0.5;
 sbc_autoupdate = true;
 
-/*
-One of the main reasons for creating the SBC is dealing with gamepad axis. In 
-order to make the axis a digital input, we store the value of the previous
-frames "down" position of the axis, and compare it to the current. Then we
-store that result in the axis_pressed map. Both of these values are set during
-the update script, which should be called at the beginning of each frame. 
+sbc_axis_prevdown = array_create(8, false);
+sbc_axis_pressed = array_create(8, false);
+sbc_axis_released = array_create(8, false);
 
-The reason we store the pressed value, instead of only the prev down value, is
-to avoid the need for an update script at the beginning and end of each frame.
-At the beginning of the frame we need to check if they user is using the keyboard
-or a directX gamepad. But if we wanted to use the previous values to determine
-pressed, we would have to set those values at the end of the frame. By checking
-at the beginning, and storeing the result right away, we only need to call one
-update script at the beginning of the frame. 
-*/
-sbc_gamepad_axis_prev = array_create(8, false);
-sbc_gamepad_axis_pressed = array_create(8, false);
-// The same logic applies to storing values for actions. 
-sbc_actions_prev = ds_map_create();
+// For similar reasons, we'll be storing the status of actions the same way
+sbc_actions_prevdown = ds_map_create();
 sbc_actions_pressed = ds_map_create();
+sbc_actions_released = ds_map_create();
 /*
 Notice that there is no list or map storing the actions. This is because we already
-end up storing prev and pressed values for every action. If we every need to iterate
-over every action, or check what actions are in the controller, we can simply use
-either the prev or pressed map of actions.
+store the down/pressed/released value for every action. If we ever need to do 
+anything with the "list" of actions, we can just use one or all of these. 
 */
 
 // custom enums to make adding actions easier/clearer
@@ -86,10 +73,10 @@ enum SBC_GAMEPAD
 	FACE2, // B (xbox)
 	FACE3, // X (xbox)
 	FACE4, // Y (xbox)
-	TRIGGER_R,
 	TRIGGER_L,
-	BUMPER_R,
+	TRIGGER_R,
 	BUMPER_L,
+	BUMPER_R,
 	START,
 	SELECT,
 }

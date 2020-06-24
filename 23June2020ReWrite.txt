@@ -1,0 +1,29 @@
+I'm revisiting this project after some time away. I have some new thoughts on how to do things. The reason for this is simply that my own code looks confusing. Further more it's missing the "released" action in addition to pressed and down. I've realized that my logic is sound, but I did not leave a good explanation of the problem, and the main reason for creating this controller. I'll do my best to explain it here:
+
+I want to be able to treat the axis on a controller as binary inputs. Just like a button they should have pressed and released states. In order to accomplish this I need to store the state of the axis somewhere so that on the next frame I can compare the current state against the old state. That task by itself is not hard. However, I want the SBC to do something else, and that is to determine whether or not the user is using a gamepad, or a keyboard. I want this feature so I can have input icons in my game that immediately change if the user switches from gamepad to keyboard, or vice versa. The SBC has to determine this at the start of the frame so I can respond to input device changes the same frame they happen. But storing previous frame data is better suited for the end of the frame. 
+
+There in lies the problem. One feature needs SBC to update at the start, another needs it to update at the end. I could solve this very easily by simply having two updates. That's probably what I should do, but I INSIST that this code be as user friendly as possible. Having a single update at the beginning of the frame is the cleanest, clearest thing. Therefore, I cannot simply store axis data at the end of the frame. 
+
+Here is my solution to the problem: axis data from the previous frame is stored in an array. The update function will happen at the start of the frame. The pressed and released states of the axis will also be stored in arrays. After these values have been updated in the update function, the array storing previous frame data will be updated to the current data. 
+
+2 updates:
+
+|start of frame
+|update 1, determine gamepad or keyboard
+|
+| (rest of frame, game logic checks input data)
+|
+|update 2, store values of axis to be used in next frame
+|end of frame
+
+1 update:
+
+|start of frame
+|determine gamepad or keyboard
+|compare current axis values agains previous frame to store pressed and released values
+|store current axis data into array, will be used as previous frame data in next frame
+|
+| (rest of frame, game logic checks input data)
+|
+|end of frame
+
