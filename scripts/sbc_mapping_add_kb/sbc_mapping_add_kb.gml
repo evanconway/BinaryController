@@ -2,9 +2,9 @@
 /// @param action
 /// @param sbc_keyboard_enum
 
-sbc_ensureinit();
 with (global.simple_binary_controller) 
 {
+	event_user(0);
 	var result = false;
 	if (!ds_map_exists(sbc_mappings_keyboard, argument0))
 	{

@@ -1,4 +1,6 @@
-/// @description If Simple Binary Controller has not been initialized, throw error.
+/// @description Ensure Init
+
+//If Simple Binary Controller has not been initialized, or is broken, throw error.
 
 var msg = "sbc_ensureinit failed. Simple Binary Controller has not been initialized!";
 

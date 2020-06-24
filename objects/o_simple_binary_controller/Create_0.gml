@@ -1,7 +1,5 @@
 // SIMPLE BINARY CONTROLLER
-// BY EVAN CONWAY
-
-// 23rd, June, 2020 huge update about to start!!
+// BY 0rd1n4ry
 
 /*
 The Simple Binary Controller (SBC) allows the user to quickly and easily add simple
@@ -23,8 +21,8 @@ are the action, and an SBC enum for the desired button or key. SBC uses its own
 enums in place of the game maker enums. The script will not work properly if you
 try to use a game maker enum in the arguments. 
 
-sbc_down() and sbc_pressed()
-Use these scripts to check if 
+sbc_down(), sbc_pressed(), and sbc_released()
+Use these scripts to check the state of an action. 
 */
 
 /*

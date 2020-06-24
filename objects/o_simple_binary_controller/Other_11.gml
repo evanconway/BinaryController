@@ -1,8 +1,10 @@
-/// @description Determine whether gamepad or keyboard is being used. Sets sbc_gamepad_using.
+/// @description Determine Gamepad or Keyboard
 
-sbc_ensureinit();
+// Determine whether gamepad or keyboard is being used. Sets sbc_gamepad_using.
+
 with (global.simple_binary_controller)
 {
+	event_user(0); // ensure initialization
 	// If no gamepadID has been determined, poll devices to find one.
 	// check all buttons
 	if (sbc_gamepad_id == undefined) 

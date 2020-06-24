@@ -63,14 +63,6 @@
             }
         },
         {
-            "Key": "06bf0ecd-d303-4aba-a10e-545909c80ef1",
-            "Value": {
-                "id": "12b332ab-d0fe-4105-948a-507bd1046cd1",
-                "resourcePath": "scripts\\sbc_gamepad_determine_using\\sbc_gamepad_determine_using.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "0b24bdb6-af81-4f0c-96bc-10b676978d4d",
             "Value": {
                 "id": "293bfffc-09b7-466e-b7a5-474c705ea183",
@@ -204,14 +196,6 @@
                 "id": "605df029-ec50-434a-a126-41a4521882c7",
                 "resourcePath": "sprites\\s_square\\s_square.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "66a060ab-fe1d-498b-915f-e4bb390c57bd",
-            "Value": {
-                "id": "fb8c6057-43be-4b40-a61f-8b97aea514c6",
-                "resourcePath": "scripts\\sbc_ensureinit\\sbc_ensureinit.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -410,7 +394,6 @@
     "script_order": [
         "02dcdec9-6104-42e0-9ba5-3800811c5688",
         "a50238a1-2c4e-4bf7-b9d5-6fa22f4351a2",
-        "66a060ab-fe1d-498b-915f-e4bb390c57bd",
         "1e7172ea-6f00-4ba8-915e-5b7fb10fe70d",
         "e9d54163-eaa6-4875-95ce-60667b493bb5",
         "e6fcc9e3-1160-425a-84a8-20b0da0a05a7",
@@ -427,7 +410,6 @@
         "02902549-c0f3-4a00-b6b5-94dc9a827e32",
         "877f6d9b-61fb-4beb-a9ac-fa494639f046",
         "14fa47e6-3c4d-4076-bfdd-8e21559a256d",
-        "06bf0ecd-d303-4aba-a10e-545909c80ef1",
         "4ec6512d-840e-452d-b896-99822578487e"
     ],
     "tutorial": ""

@@ -1,9 +1,9 @@
 /// @description Sets all values for Simple Binary Controller
 
 sbc_ensureinit();
-sbc_gamepad_determine_using();
 with (global.simple_binary_controller)
 {
+	event_user(1); // determine using gamepad or keyboard
 	/*
 	The pressed and released values of the axis values are set here. Notice that acis_prevdown is required to
 	determine these states. Once they have been determined, the prevdown values are no longer needed and can 
