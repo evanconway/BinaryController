@@ -1,7 +1,7 @@
 /// @description Returns true if given gamepad_enum is pressed.
 /// @param sbc_gamepad_enum
 
-sbc_ensureinit();
+sbc_initialize();
 with (global.simple_binary_controller)
 {
 	if (sbc_gamepad_id == undefined) exit;
@@ -9,7 +9,8 @@ with (global.simple_binary_controller)
 	{
 		// Axis values are assigned to their pressed array value. This array is set in the update script.	
 		case SBC_GAMEPAD.LS_UP:
-			return sbc_axis_pressed[SBC_GAMEPAD.LS_UP];
+			return sbc_gamepad_down(SBC_GAMEPAD.LS_UP) && !sbc_axis_prevdown[SBC_GAMEPAD.LS_UP];
+			//return sbc_axis_pressed[SBC_GAMEPAD.LS_UP];
 		case SBC_GAMEPAD.LS_DOWN:
 			return sbc_axis_pressed[SBC_GAMEPAD.LS_DOWN];
 		case SBC_GAMEPAD.LS_LEFT:

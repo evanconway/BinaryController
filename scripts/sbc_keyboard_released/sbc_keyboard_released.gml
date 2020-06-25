@@ -1,6 +1,7 @@
 /// @description Returns true/false for released state of given key_enum.
 /// @param sbc_keyboard_enum
 
+sbc_initialize();
 switch (argument[0])
 {
 	case SBC_KEYBOARD.A:

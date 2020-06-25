@@ -2,7 +2,7 @@
 /// @param action
 /// @param sbc_gamepad_enum
 
-sbc_ensureinit();
+sbc_initialize();
 with (global.simple_binary_controller)
 {
 	if (!ds_map_exists(sbc_mappings_gamepad, argument0))

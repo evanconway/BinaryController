@@ -1,9 +1,10 @@
 /// @description Sets all values for Simple Binary Controller
 
-sbc_ensureinit();
+sbc_initialize();
 with (global.simple_binary_controller)
 {
-	event_user(1); // determine using gamepad or keyboard
+	if (alarm[0] > 0) exit; // prevent multiple update calls in one frame
+	event_user(0); // determine using gamepad or keyboard
 	/*
 	The pressed and released values of the axis values are set here. Notice that acis_prevdown is required to
 	determine these states. Once they have been determined, the prevdown values are no longer needed and can 
@@ -47,4 +48,5 @@ with (global.simple_binary_controller)
 		sbc_actions_released[?act] = !sbc_down(act) && sbc_actions_prevdown[?act];
 		sbc_actions_prevdown[?act] = sbc_down(act);
 	}
+	alarm[0] = 1; // mark update as called for this frame
 }

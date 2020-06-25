@@ -1,7 +1,7 @@
 /// @description Returns true if given gamepad_enum is pressed.
 /// @param sbc_gamepad_enum
 
-sbc_ensureinit();
+sbc_initialize();
 with (global.simple_binary_controller)
 {
 	if (sbc_gamepad_id == undefined) exit;

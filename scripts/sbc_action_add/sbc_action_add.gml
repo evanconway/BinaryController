@@ -3,9 +3,9 @@
 /// @param *optional*sbc_keyboard_enum
 /// @param *optional*sbc_gamepad_enum
 
+sbc_initialize();
 with (global.simple_binary_controller) 
 {
-	event_user(0);
 	if (ds_map_exists(sbc_actions_pressed, argument[0])) 
 	{
 		show_debug_message("Simple Binary Controller action already exists!");

@@ -3,7 +3,7 @@
 
 // This script does not rely on the SBC update script. It can be called from anywhere at any time.
 
-sbc_ensureinit();
+sbc_initialize();
 with (global.simple_binary_controller)
 {
 	if (sbc_gamepad_id == undefined) return false;

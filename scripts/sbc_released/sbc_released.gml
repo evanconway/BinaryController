@@ -1,7 +1,7 @@
 /// @description Returns true/false if given action is released
 /// @param action
 
-sbc_ensureinit();
+sbc_initialize();
 with (global.simple_binary_controller)
 {
 	if (!ds_map_exists(sbc_actions_released, argument[0]))

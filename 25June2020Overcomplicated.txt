@@ -1,0 +1,6 @@
+I was so dead set on making sure there's only one update function that I've over complicated this project. I'm going to redo things again, and this time it'll be simple:
+
+We'll check for using gamepad or keyboard in the begin step by default, but the user can call this themselves anywhere. 
+We'll set previous values of the axis and actions in the draw gui end step. This is the absolute last step in every frame of game maker, and I think it's reasonable to suspect no user would ever need to check input by this point in the frame.
+
+Since we're just going to store previous values for the axis and actions, and these are stored at the end of the frame, there is no longer any need for storing the pressed and released state of every action. 
