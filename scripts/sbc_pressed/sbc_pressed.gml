@@ -8,5 +8,5 @@ with (global.simple_binary_controller)
 	{
 		show_error("sbc_pressed failed. Action does not exist!", true);
 	}
-	return sbc_down && !sbc_actions_prevdown[?argument[0]];
+	return sbc_down(argument[0]) && !sbc_actions_prevdown[?argument[0]];
 }
