@@ -9,3 +9,6 @@ for (var act = ds_map_find_first(sbc_actions_prevdown); act != undefined; act = 
 {
 	sbc_actions_prevdown[?act] = sbc_down(act);
 }
+
+// setting this variable to undefined indicates that sbc_determine_gp_or_kb should execute
+sbc_gamepad_using = undefined;

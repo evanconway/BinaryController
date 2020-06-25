@@ -1,9 +1,15 @@
 /// @description Determine Gamepad or Keyboard
 
-// Determine whether gamepad or keyboard is being used. Sets sbc_gamepad_using.
+// Determine whether gamepad or keyboard is being used. Sets and returns sbc_gamepad_using.
+// True means that the gamepad is being used, false means keyboard is being used.
 sbc_initialize();
 with (global.simple_binary_controller)
 {
+	/*
+	sbc_gamepad_using is set to undefined in the draw_gui_endstep. If has been defined for 
+	this frame, there is no need to run through the logic again. 
+	*/
+	if (sbc_gamepad_using != undefined) return sbc_gamepad_using;
 	// If no gamepadID has been determined, poll devices to find one.
 	// check all buttons
 	if (sbc_gamepad_id == undefined) 
@@ -66,3 +72,4 @@ with (global.simple_binary_controller)
 	// check if using keyboard
 	if (keyboard_check_pressed(vk_anykey)) sbc_gamepad_using = false;
 }
+return global.simple_binary_controller.sbc_gamepad_using;
