@@ -7,24 +7,22 @@ with (global.simple_binary_controller)
 	if (sbc_gamepad_id == undefined) exit;
 	switch (argument[0]) 
 	{
-		// Axis values are assigned to their pressed array value. This array is set in the update script.	
 		case SBC_GAMEPAD.LS_UP:
 			return sbc_gamepad_down(SBC_GAMEPAD.LS_UP) && !sbc_axis_prevdown[SBC_GAMEPAD.LS_UP];
-			//return sbc_axis_pressed[SBC_GAMEPAD.LS_UP];
 		case SBC_GAMEPAD.LS_DOWN:
-			return sbc_axis_pressed[SBC_GAMEPAD.LS_DOWN];
+			return sbc_gamepad_down(SBC_GAMEPAD.LS_DOWN) && !sbc_axis_prevdown[SBC_GAMEPAD.LS_DOWN];
 		case SBC_GAMEPAD.LS_LEFT:
-			return sbc_axis_pressed[SBC_GAMEPAD.LS_LEFT];
+			return sbc_gamepad_down(SBC_GAMEPAD.LS_LEFT) && !sbc_axis_prevdown[SBC_GAMEPAD.LS_LEFT];
 		case SBC_GAMEPAD.LS_RIGHT:
-			return sbc_axis_pressed[SBC_GAMEPAD.LS_RIGHT];
+			return sbc_gamepad_down(SBC_GAMEPAD.LS_RIGHT) && !sbc_axis_prevdown[SBC_GAMEPAD.LS_RIGHT];
 		case SBC_GAMEPAD.RS_UP:
-			return sbc_axis_pressed[SBC_GAMEPAD.RS_UP];
+			return sbc_gamepad_down(SBC_GAMEPAD.RS_UP) && !sbc_axis_prevdown[SBC_GAMEPAD.RS_UP];
 		case SBC_GAMEPAD.RS_DOWN:
-			return sbc_axis_pressed[SBC_GAMEPAD.RS_DOWN];
+			return sbc_gamepad_down(SBC_GAMEPAD.RS_DOWN) && !sbc_axis_prevdown[SBC_GAMEPAD.RS_DOWN];
 		case SBC_GAMEPAD.RS_LEFT:
-			return sbc_axis_pressed[SBC_GAMEPAD.RS_LEFT];
+			return sbc_gamepad_down(SBC_GAMEPAD.RS_LEFT) && !sbc_axis_prevdown[SBC_GAMEPAD.RS_LEFT];
 		case SBC_GAMEPAD.RS_RIGHT:
-			return sbc_axis_pressed[SBC_GAMEPAD.RS_RIGHT];
+			return sbc_gamepad_down(SBC_GAMEPAD.RS_RIGHT) && !sbc_axis_prevdown[SBC_GAMEPAD.RS_RIGHT];
 		case SBC_GAMEPAD.LS_CLICK:
 			return gamepad_button_check_pressed(sbc_gamepad_id, gp_stickl);
 		case SBC_GAMEPAD.RS_CLICK:

@@ -1,5 +1,6 @@
 /// @description Sets all values for Simple Binary Controller
 
+
 sbc_initialize();
 with (global.simple_binary_controller)
 {
@@ -42,7 +43,7 @@ with (global.simple_binary_controller)
 	sbc_axis_prevdown[SBC_GAMEPAD.RS_RIGHT] = sbc_gamepad_down(SBC_GAMEPAD.RS_RIGHT);
 
 	// The pressed and release values of actions is set the same way.
-	for (var act = ds_map_find_first(sbc_actions_pressed); act != undefined; act = ds_map_find_next(sbc_actions_pressed, act)) 
+	for (var act = ds_map_find_first(sbc_actions_prevdown); act != undefined; act = ds_map_find_next(sbc_actions_prevdown, act)) 
 	{
 		sbc_actions_pressed[?act] = sbc_down(act) && !sbc_actions_prevdown[?act];
 		sbc_actions_released[?act] = !sbc_down(act) && sbc_actions_prevdown[?act];

@@ -2,9 +2,10 @@
 /// @param action
 
 sbc_initialize();
+sbc_determine_gp_or_kb();
 with (global.simple_binary_controller)
 {
-	if (!ds_map_exists(sbc_actions_pressed, argument[0]))
+	if (!ds_map_exists(sbc_actions_prevdown, argument[0]))
 	{
 		show_error("sbc_down failed. Action does not exist!", true);
 	}

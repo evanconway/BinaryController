@@ -34,21 +34,10 @@ sbc_mappings_gamepad = ds_map_create();
 sbc_gamepad_using = false; // using gamepad or keyboard
 sbc_gamepad_id = undefined;
 sbc_deadzone = 0.5;
-sbc_autoupdate = true;
 
 sbc_axis_prevdown = array_create(8, false);
-sbc_axis_pressed = array_create(8, false);
-sbc_axis_released = array_create(8, false);
-
-// For similar reasons, we'll be storing the status of actions the same way
 sbc_actions_prevdown = ds_map_create();
-sbc_actions_pressed = ds_map_create();
-sbc_actions_released = ds_map_create();
-/*
-Notice that there is no list or map storing the actions. This is because we already
-store the down/pressed/released value for every action. If we ever need to do 
-anything with the "list" of actions, we can just use one or all of these. 
-*/
+
 
 // custom enums to make adding actions easier/clearer
 enum SBC_GAMEPAD 
