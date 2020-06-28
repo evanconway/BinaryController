@@ -11,3 +11,4 @@ if (sbc_pressed(CHANGE))
 	if (sprite_index == s_square) sprite_index = s_square2;
 	else sprite_index = s_square;
 }
+

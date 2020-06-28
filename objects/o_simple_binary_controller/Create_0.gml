@@ -25,18 +25,18 @@ sbc_down(), sbc_pressed(), and sbc_released()
 Use these scripts to check the state of an action. 
 */
 
-/*
-For both of the maps: an action as the key, and a resizable list as the 
-value. This lets us assign multiple inputs to one action.
-*/
-sbc_mappings_keyboard = ds_map_create();
-sbc_mappings_gamepad = ds_map_create();
+sbc_mappings_keyboard = ds_map_create(); // key is action, value is resizable list of key enums
+sbc_mappings_gamepad = ds_map_create(); // key is action, value is resizable list of button enums
 sbc_gamepad_using = false; // using gamepad or keyboard
 sbc_gamepad_id = undefined;
 sbc_deadzone = 0.5;
 
-sbc_axis_prevdown = array_create(8, false);
+/*
+The state of all actions needs to be stored at the end of each frame to be referenced in the next. 
+This map doubles as the map that stores all actions added to the controller.
+*/
 sbc_actions_prevdown = ds_map_create();
+sbc_axis_prevdown = array_create(8, false);
 
 
 // custom enums to make adding actions easier/clearer
