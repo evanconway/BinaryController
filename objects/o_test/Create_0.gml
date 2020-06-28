@@ -1,5 +1,10 @@
 /// @description 
 
+surface_resize(application_surface, 200, 200);
+display_set_gui_size(200, 200);
+window_set_size(800, 800);
+alarm[0] = 1;
+
 // Actions
 #macro MOVE_UP "UP"
 #macro MOVE_DOWN "DOWN"
@@ -12,7 +17,3 @@ sbc_action_add(MOVE_DOWN, SBC_KEYBOARD.DOWN, SBC_GAMEPAD.LS_DOWN);
 sbc_action_add(MOVE_LEFT, SBC_KEYBOARD.LEFT, SBC_GAMEPAD.LS_LEFT);
 sbc_action_add(MOVE_RIGHT, SBC_KEYBOARD.RIGHT, SBC_GAMEPAD.LS_RIGHT);
 sbc_action_add(CHANGE, SBC_KEYBOARD.SPACE, SBC_GAMEPAD.FACE1);
-sbc_mapping_add_gp(CHANGE, SBC_GAMEPAD.RS_UP);
-sbc_mapping_add_gp(CHANGE, SBC_GAMEPAD.RS_DOWN);
-sbc_mapping_add_gp(CHANGE, SBC_GAMEPAD.RS_LEFT);
-sbc_mapping_add_gp(CHANGE, SBC_GAMEPAD.RS_RIGHT);

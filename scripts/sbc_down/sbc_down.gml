@@ -11,7 +11,7 @@ with (global.simple_binary_controller)
 	}
 	var _mapping = (sbc_gamepad_using) ? sbc_mappings_gamepad : sbc_mappings_keyboard;
 	var _key = argument[0];
-	var _buttons = ds_map_find_value(_mapping, _key); // buttons is a ds_list
+	var _buttons = _mapping[?_key]; // buttons is a ds_list
 	/*
 	Check the status of all buttons mapped to the action. If any of them are down, the action 
 	is considered down.

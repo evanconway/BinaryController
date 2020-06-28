@@ -9,7 +9,7 @@ with (global.simple_binary_controller)
 	{
 		show_error("sbc_mapping_remove_kb failed. Simple Binary Controller action does not exist!", true);
 	}
-	var _list = ds_map_find_value(sbc_mappings_keyboard, argument0);
+	var _list = sbc_mappings_keyboard[?argument0];
 	var _i = ds_list_find_index(_list, argument1);
 	var result = false;
 	if (_i < 0)

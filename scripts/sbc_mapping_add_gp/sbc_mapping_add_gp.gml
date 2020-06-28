@@ -12,7 +12,7 @@ with (global.simple_binary_controller)
 	}
 	else
 	{
-		ds_list_add(ds_map_find_value(sbc_mappings_gamepad, argument0), argument1);
+		ds_list_add(sbc_mappings_gamepad[?argument0], argument1);
 		result = true;
 	}
 	return result;
