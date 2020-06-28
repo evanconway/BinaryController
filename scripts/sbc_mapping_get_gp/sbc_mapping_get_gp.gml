@@ -2,6 +2,7 @@
 ///@param action
 
 sbc_initialize();
+var result = undefined;
 with (global.simple_binary_controller)
 {
 	if (!ds_map_exists(sbc_mappings_gamepad, argument0))
@@ -10,6 +11,7 @@ with (global.simple_binary_controller)
 	}
 	else
 	{
-		return sbc_mappings_gamepad[?argument0];
+		result = sbc_mappings_gamepad[?argument0];
 	}
 }
+return result;

@@ -1,0 +1,7 @@
+I want a way to automatically remove mappings when adding a new mapping creates a conflict. For example, setting the A button to attack when A is already set to jump. I don't want my code to automatically remove the A mapping from jump though, I want to choose. Also, I want to be able to assign a mapping for UI navigation, and another mapping for gameplay. That way A could be bound to "select" or "confirm" and also "jump". But when I try to map that same A button to "attack", I don't want it to conflict with the UI mappings, only the gameplay ones.
+
+Before resolving multiple mappings, let's clarify how we'll resolve conflict behavior. I've decided that when adding a mapping to an action, there will be an optional boolean variable to "remove conflicts". If this is true, the controller will automatically remove that mapping from any other action with the same mapping. That seems simple and clear.
+
+As for multiple mappings, here's my idea: I have a map called groups. When an action is added, there will be an optional variable called group. All actions will have a group mapped to them, the default being undefined. If a mapping is added and then "resolve conflicts" variable is true, then actions will only have conflicts removed if the actions are all in the same group, that includes the "undefined" group.
+
+When I say "undefined" I really mean default. But I think the undefined variable is the best to use as a default in this case.

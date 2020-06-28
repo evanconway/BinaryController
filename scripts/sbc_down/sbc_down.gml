@@ -3,6 +3,7 @@
 
 sbc_initialize();
 sbc_determine_gp_or_kb();
+var result = false;
 with (global.simple_binary_controller)
 {
 	if (!ds_map_exists(sbc_actions_prevdown, argument[0]))
@@ -21,13 +22,13 @@ with (global.simple_binary_controller)
 		var _button = ds_list_find_value(_buttons, i); // button is an sbc_enum for keyboard or gamepad
 		if (sbc_gamepad_using)
 		{
-			if (sbc_gamepad_down(_button)) return true;
+			if (sbc_gamepad_down(_button)) result = true;
 		}
 		else
 		{
-			if (sbc_keyboard_down(_button)) return true;
+			if (sbc_keyboard_down(_button)) result = true;
 		}
 	}
 }
 
-return false;
+return result;

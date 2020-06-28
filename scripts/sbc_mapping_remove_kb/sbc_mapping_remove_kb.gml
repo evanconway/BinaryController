@@ -3,6 +3,7 @@
 /// @param sbc_keyboard_enum
 
 sbc_initialize();
+var result = false;
 with (global.simple_binary_controller)
 {
 	if (!ds_map_exists(sbc_mappings_keyboard, argument0))
@@ -11,15 +12,10 @@ with (global.simple_binary_controller)
 	}
 	var _list = sbc_mappings_keyboard[?argument0];
 	var _i = ds_list_find_index(_list, argument1);
-	var result = false;
-	if (_i < 0)
-	{
-		show_debug_message("sbc_mapping_remove_kb failed. Input is not mapped to action!");
-	}
-	else
+	if (_i >= 0)
 	{
 		ds_list_delete(_list, _i);
 		result = true;
 	}
-	return result;
 }
+return result;
