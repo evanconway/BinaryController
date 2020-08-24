@@ -50,7 +50,6 @@ function sbc_mapping_add_kb(action, sbc_keyboard_enum, resolve_conflicts) {
 	return result;
 }
 
-
 /// @desc Get gamepad mappings for given action, returns a ds list.
 function sbc_mapping_get_gp(action) {
 	sbc_initialize();
