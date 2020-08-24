@@ -8,7 +8,7 @@ function sbc_initialize() {
 
 /// @desc Add new action to sbc_actions map.
 /// @func sbc_action_add(action, *group)
-function sbc_action_add(action, group) {
+function sbc_action_add(action) {
 	sbc_initialize();
 	with (global.simple_binary_controller) {
 		if (ds_map_exists(sbc_actions_prevdown, action)) {
@@ -18,7 +18,7 @@ function sbc_action_add(action, group) {
 		ds_map_add(sbc_actions_prevdown, action, false);
 		ds_map_add(sbc_mappings_keyboard, action, ds_list_create());
 		ds_map_add(sbc_mappings_gamepad, action, ds_list_create());
-		if (argument_count > 1) ds_map_add(sbc_groups, action, group);
+		if (argument_count > 1) ds_map_add(sbc_groups, action, argument[1]);
 		else ds_map_add(sbc_groups, action, undefined);
 	}
 }

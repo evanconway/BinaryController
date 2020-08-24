@@ -1,6 +1,6 @@
 /// @desc Add button to action mapping for gamepad, returns true if successful.
 /// @func sbc_mapping_add_gp(action, sbc_gamepad_enum, *resolve_conflicts)
-function sbc_mapping_add_gp(action, sbc_gamepad_enum, resolve_conflicts) {
+function sbc_mapping_add_gp(action, sbc_gamepad_enum) {
 	sbc_initialize();
 	var result = false;
 	with (global.simple_binary_controller) {
@@ -8,7 +8,7 @@ function sbc_mapping_add_gp(action, sbc_gamepad_enum, resolve_conflicts) {
 			show_debug_message("sbc_mapping_add_gp failed. Simple Binary Controller action does not exist!");
 		} else {
 			// remove mapping from other actions in same group
-			if (argument_count < 3 || (!resolve_conflicts)) {
+			if (argument_count < 3 || (!argument[2])) {
 				for (var a = ds_map_find_first(sbc_groups); a != undefined; a = ds_map_find_next(sbc_groups, a)) {
 					if (sbc_groups[?a] == sbc_groups[?action]) {
 						sbc_mapping_remove_gp(a, sbc_gamepad_enum);
@@ -26,7 +26,7 @@ function sbc_mapping_add_gp(action, sbc_gamepad_enum, resolve_conflicts) {
 
 /// @desc Add key to action mapping for keyboard, returns true if successful.
 /// @func sbc_mapping_add_kb(action, sbc_keyboard_enum, *resolve_conflicts)
-function sbc_mapping_add_kb(action, sbc_keyboard_enum, resolve_conflicts) {
+function sbc_mapping_add_kb(action, sbc_keyboard_enum) {
 	sbc_initialize();
 	var result = false;
 	with (global.simple_binary_controller) {
@@ -34,7 +34,7 @@ function sbc_mapping_add_kb(action, sbc_keyboard_enum, resolve_conflicts) {
 			show_debug_message("sbc_mapping_add_kb failed. Simple Binary Controller action does not exist!");
 		} else {
 			// remove mapping from other actions in same group
-			if (argument_count < 3 || (!resolve_conflicts)) {
+			if (argument_count < 3 || (!argument[2])) {
 				for (var a = ds_map_find_first(sbc_groups); a != undefined; a = ds_map_find_next(sbc_groups, a)) {
 					if (sbc_groups[?a] == sbc_groups[?action]) {
 						sbc_mapping_remove_kb(a, sbc_keyboard_enum);

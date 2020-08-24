@@ -38,5 +38,3 @@ sbc_mapping_add_gp(MOVE_DOWN, SBC_GAMEPAD.LS_DOWN);
 sbc_mapping_add_gp(MOVE_LEFT, SBC_GAMEPAD.LS_LEFT);
 sbc_mapping_add_gp(MOVE_RIGHT, SBC_GAMEPAD.LS_RIGHT);
 sbc_mapping_add_gp(CHANGE, SBC_GAMEPAD.FACE1);
-
-sbc_functions();
