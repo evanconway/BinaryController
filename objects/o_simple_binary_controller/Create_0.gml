@@ -21,8 +21,9 @@ sbc_actions_prevdown = ds_map_create();
 sbc_axis_prevdown = array_create(8, false);
 
 /*
-Actions are assigned a group when added. The default is "undefined". Groups are used when resolving
-mapping conflicts.
+Actions are assigned a group when added. Groups are used to allow the same button to have different
+uses in different context. Some examples of groups would be: main_menu, gameplay, start_menu. The 
+default group is "undefined".
 */
 sbc_groups = ds_map_create();
 
@@ -164,5 +165,8 @@ enum SBC_KEYBOARD
 	F21,
 	F22,
 	F23,
-	F24
+	F24,
+	MOUSE_BUTTON_LEFT,
+	MOUSE_BUTTON_RIGHT,
+	MOUSE_BUTTON_MIDDDLE
 }
