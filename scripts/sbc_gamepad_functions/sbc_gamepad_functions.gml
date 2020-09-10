@@ -3,7 +3,7 @@ function sbc_gamepad_down(sbc_gamepad_enum) {
 	sbc_initialize();
 	with (global.simple_binary_controller) {
 		if (sbc_gamepad_id == undefined) return false;
-		switch (gamepad_enum) {
+		switch (sbc_gamepad_enum) {
 			case SBC_GAMEPAD.LS_UP:
 				return gamepad_axis_value(sbc_gamepad_id, gp_axislv) < sbc_deadzone * -1;
 			case SBC_GAMEPAD.LS_DOWN:
@@ -69,11 +69,11 @@ function sbc_gamepad_lastpressed() {
 }
 
 /// @desc Returns true if given gamepad_enum is pressed.
-function sbc_gamepad_pressed(gamepad_enum) {
+function sbc_gamepad_pressed(sbc_gamepad_enum) {
 	sbc_initialize();
 	with (global.simple_binary_controller) {
 		if (sbc_gamepad_id == undefined) exit;
-		switch (gamepad_enum) {
+		switch (sbc_gamepad_enum) {
 			case SBC_GAMEPAD.LS_UP:
 				return sbc_gamepad_down(SBC_GAMEPAD.LS_UP) && !sbc_axis_prevdown[SBC_GAMEPAD.LS_UP];
 			case SBC_GAMEPAD.LS_DOWN:
@@ -127,11 +127,11 @@ function sbc_gamepad_pressed(gamepad_enum) {
 }
 
 /// @desc Returns true if given gamepad_enum is released.
-function sbc_gamepad_released(gamepad_enum) {
+function sbc_gamepad_released(sbc_gamepad_enum) {
 	sbc_initialize();
 	with (global.simple_binary_controller) {
 		if (sbc_gamepad_id == undefined) exit;
-		switch (gamepad_enum) {
+		switch (sbc_gamepad_enum) {
 			case SBC_GAMEPAD.LS_UP:
 				return !sbc_gamepad_down(SBC_GAMEPAD.LS_UP) && sbc_axis_prevdown[SBC_GAMEPAD.LS_UP];
 			case SBC_GAMEPAD.LS_DOWN:
