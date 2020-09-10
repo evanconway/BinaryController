@@ -31,6 +31,10 @@ sbc_mapping_add_kb(MOVE_UP, SBC_KEYBOARD.UP);
 sbc_mapping_add_kb(MOVE_DOWN, SBC_KEYBOARD.DOWN);
 sbc_mapping_add_kb(MOVE_LEFT, SBC_KEYBOARD.LEFT);
 sbc_mapping_add_kb(MOVE_RIGHT, SBC_KEYBOARD.RIGHT);
+sbc_mapping_add_kb(MOVE_UP, SBC_KEYBOARD.W);
+sbc_mapping_add_kb(MOVE_DOWN, SBC_KEYBOARD.S);
+sbc_mapping_add_kb(MOVE_LEFT, SBC_KEYBOARD.A);
+sbc_mapping_add_kb(MOVE_RIGHT, SBC_KEYBOARD.D);
 sbc_mapping_add_kb(CHANGE, SBC_KEYBOARD.SPACE);
 
 sbc_mapping_add_gp(MOVE_UP, SBC_GAMEPAD.LS_UP);
@@ -38,3 +42,6 @@ sbc_mapping_add_gp(MOVE_DOWN, SBC_GAMEPAD.LS_DOWN);
 sbc_mapping_add_gp(MOVE_LEFT, SBC_GAMEPAD.LS_LEFT);
 sbc_mapping_add_gp(MOVE_RIGHT, SBC_GAMEPAD.LS_RIGHT);
 sbc_mapping_add_gp(CHANGE, SBC_GAMEPAD.FACE1);
+
+var text = ord("`");
+show_debug_message(text);

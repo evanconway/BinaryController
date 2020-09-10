@@ -4,77 +4,77 @@ function sbc_keyboard_down(keyboard_enum) {
 	sbc_initialize();
 	switch (keyboard_enum) {
 		case SBC_KEYBOARD.A:
-			return keyboard_check(ord("A"));
+			return keyboard_check(65);
 		case SBC_KEYBOARD.B:
-			return keyboard_check(ord("B"));
+			return keyboard_check(66);
 		case SBC_KEYBOARD.C:
-			return keyboard_check(ord("C"));
+			return keyboard_check(67);
 		case SBC_KEYBOARD.D:
-			return keyboard_check(ord("D"));
+			return keyboard_check(68);
 		case SBC_KEYBOARD.E:
-			return keyboard_check(ord("E"));
+			return keyboard_check(69);
 		case SBC_KEYBOARD.F:
-			return keyboard_check(ord("F"));
+			return keyboard_check(70);
 		case SBC_KEYBOARD.G:
-			return keyboard_check(ord("G"));
+			return keyboard_check(71);
 		case SBC_KEYBOARD.H:
-			return keyboard_check(ord("H"));
+			return keyboard_check(72);
 		case SBC_KEYBOARD.I:
-			return keyboard_check(ord("I"));
+			return keyboard_check(73);
 		case SBC_KEYBOARD.J:
-			return keyboard_check(ord("J"));
+			return keyboard_check(74);
 		case SBC_KEYBOARD.K:
-			return keyboard_check(ord("K"));
+			return keyboard_check(75);
 		case SBC_KEYBOARD.L:
-			return keyboard_check(ord("L"));
+			return keyboard_check(76);
 		case SBC_KEYBOARD.M:
-			return keyboard_check(ord("M"));
+			return keyboard_check(77);
 		case SBC_KEYBOARD.N:
-			return keyboard_check(ord("N"));
+			return keyboard_check(78);
 		case SBC_KEYBOARD.O:
-			return keyboard_check(ord("O"));
+			return keyboard_check(79);
 		case SBC_KEYBOARD.P:
-			return keyboard_check(ord("P"));
+			return keyboard_check(80);
 		case SBC_KEYBOARD.Q:
-			return keyboard_check(ord("Q"));
+			return keyboard_check(81);
 		case SBC_KEYBOARD.R:
-			return keyboard_check(ord("R"));
+			return keyboard_check(82);
 		case SBC_KEYBOARD.S:
-			return keyboard_check(ord("S"));
+			return keyboard_check(83);
 		case SBC_KEYBOARD.T:
-			return keyboard_check(ord("T"));
+			return keyboard_check(84);
 		case SBC_KEYBOARD.U:
-			return keyboard_check(ord("U"));
+			return keyboard_check(85);
 		case SBC_KEYBOARD.V:
-			return keyboard_check(ord("V"));
+			return keyboard_check(86);
 		case SBC_KEYBOARD.W:
-			return keyboard_check(ord("W"));
+			return keyboard_check(87);
 		case SBC_KEYBOARD.X:
-			return keyboard_check(ord("X"));
+			return keyboard_check(88);
 		case SBC_KEYBOARD.Y:
-			return keyboard_check(ord("Y"));
+			return keyboard_check(89);
 		case SBC_KEYBOARD.Z:
-			return keyboard_check(ord("Z"));
+			return keyboard_check(90);
 		case SBC_KEYBOARD.ROW_1:
-			return keyboard_check(ord("1"));
+			return keyboard_check(49);
 		case SBC_KEYBOARD.ROW_2:
-			return keyboard_check(ord("2"));
+			return keyboard_check(50);
 		case SBC_KEYBOARD.ROW_3:
-			return keyboard_check(ord("3"));
+			return keyboard_check(51);
 		case SBC_KEYBOARD.ROW_4:
-			return keyboard_check(ord("4"));
+			return keyboard_check(52);
 		case SBC_KEYBOARD.ROW_5:
-			return keyboard_check(ord("5"));
+			return keyboard_check(53);
 		case SBC_KEYBOARD.ROW_6:
-			return keyboard_check(ord("6"));
+			return keyboard_check(54);
 		case SBC_KEYBOARD.ROW_7:
-			return keyboard_check(ord("7"));
+			return keyboard_check(55);
 		case SBC_KEYBOARD.ROW_8:
-			return keyboard_check(ord("8"));
+			return keyboard_check(56);
 		case SBC_KEYBOARD.ROW_9:
-			return keyboard_check(ord("9"));
+			return keyboard_check(57);
 		case SBC_KEYBOARD.ROW_0:
-			return keyboard_check(ord("0"));
+			return keyboard_check(58);
 		case SBC_KEYBOARD.SPACE:
 			return keyboard_check(vk_space);
 		case SBC_KEYBOARD.ESC:
@@ -106,7 +106,7 @@ function sbc_keyboard_down(keyboard_enum) {
 		case SBC_KEYBOARD.SHIFTR:
 			return keyboard_check(vk_rshift);
 		case SBC_KEYBOARD.TILDE:
-			return keyboard_check(ord(0xC0));
+			return keyboard_check(96);
 		case SBC_KEYBOARD.MINUS:
 			return keyboard_check(0xBD);
 		case SBC_KEYBOARD.PLUS:
@@ -241,221 +241,221 @@ function sbc_keyboard_pressed(keyboard_enum) {
 	sbc_initialize();
 	switch (keyboard_enum) {
 		case SBC_KEYBOARD.A:
-			return keyboard_check_pressed(ord("A"));
+			return keyboard_check(65);
 		case SBC_KEYBOARD.B:
-			return keyboard_check_pressed(ord("B"));
+			return keyboard_check(66);
 		case SBC_KEYBOARD.C:
-			return keyboard_check_pressed(ord("C"));
+			return keyboard_check(67);
 		case SBC_KEYBOARD.D:
-			return keyboard_check_pressed(ord("D"));
+			return keyboard_check(68);
 		case SBC_KEYBOARD.E:
-			return keyboard_check_pressed(ord("E"));
+			return keyboard_check(69);
 		case SBC_KEYBOARD.F:
-			return keyboard_check_pressed(ord("F"));
+			return keyboard_check(70);
 		case SBC_KEYBOARD.G:
-			return keyboard_check_pressed(ord("G"));
+			return keyboard_check(71);
 		case SBC_KEYBOARD.H:
-			return keyboard_check_pressed(ord("H"));
+			return keyboard_check(72);
 		case SBC_KEYBOARD.I:
-			return keyboard_check_pressed(ord("I"));
+			return keyboard_check(73);
 		case SBC_KEYBOARD.J:
-			return keyboard_check_pressed(ord("J"));
+			return keyboard_check(74);
 		case SBC_KEYBOARD.K:
-			return keyboard_check_pressed(ord("K"));
+			return keyboard_check(75);
 		case SBC_KEYBOARD.L:
-			return keyboard_check_pressed(ord("L"));
+			return keyboard_check(76);
 		case SBC_KEYBOARD.M:
-			return keyboard_check_pressed(ord("M"));
+			return keyboard_check(77);
 		case SBC_KEYBOARD.N:
-			return keyboard_check_pressed(ord("N"));
+			return keyboard_check(78);
 		case SBC_KEYBOARD.O:
-			return keyboard_check_pressed(ord("O"));
+			return keyboard_check(79);
 		case SBC_KEYBOARD.P:
-			return keyboard_check_pressed(ord("P"));
+			return keyboard_check(80);
 		case SBC_KEYBOARD.Q:
-			return keyboard_check_pressed(ord("Q"));
+			return keyboard_check(81);
 		case SBC_KEYBOARD.R:
-			return keyboard_check_pressed(ord("R"));
+			return keyboard_check(82);
 		case SBC_KEYBOARD.S:
-			return keyboard_check_pressed(ord("S"));
+			return keyboard_check(83);
 		case SBC_KEYBOARD.T:
-			return keyboard_check_pressed(ord("T"));
+			return keyboard_check(84);
 		case SBC_KEYBOARD.U:
-			return keyboard_check_pressed(ord("U"));
+			return keyboard_check(85);
 		case SBC_KEYBOARD.V:
-			return keyboard_check_pressed(ord("V"));
+			return keyboard_check(86);
 		case SBC_KEYBOARD.W:
-			return keyboard_check_pressed(ord("W"));
+			return keyboard_check(87);
 		case SBC_KEYBOARD.X:
-			return keyboard_check_pressed(ord("X"));
+			return keyboard_check(88);
 		case SBC_KEYBOARD.Y:
-			return keyboard_check_pressed(ord("Y"));
+			return keyboard_check(89);
 		case SBC_KEYBOARD.Z:
-			return keyboard_check_pressed(ord("Z"));
+			return keyboard_check(90);
 		case SBC_KEYBOARD.ROW_1:
-			return keyboard_check_pressed(ord("1"));
+			return keyboard_check(49);
 		case SBC_KEYBOARD.ROW_2:
-			return keyboard_check_pressed(ord("2"));
+			return keyboard_check(50);
 		case SBC_KEYBOARD.ROW_3:
-			return keyboard_check_pressed(ord("3"));
+			return keyboard_check(51);
 		case SBC_KEYBOARD.ROW_4:
-			return keyboard_check_pressed(ord("4"));
+			return keyboard_check(52);
 		case SBC_KEYBOARD.ROW_5:
-			return keyboard_check_pressed(ord("5"));
+			return keyboard_check(53);
 		case SBC_KEYBOARD.ROW_6:
-			return keyboard_check_pressed(ord("6"));
+			return keyboard_check(54);
 		case SBC_KEYBOARD.ROW_7:
-			return keyboard_check_pressed(ord("7"));
+			return keyboard_check(55);
 		case SBC_KEYBOARD.ROW_8:
-			return keyboard_check_pressed(ord("8"));
+			return keyboard_check(56);
 		case SBC_KEYBOARD.ROW_9:
-			return keyboard_check_pressed(ord("9"));
+			return keyboard_check(57);
 		case SBC_KEYBOARD.ROW_0:
-			return keyboard_check_pressed(ord("0"));
+			return keyboard_check(58);
 		case SBC_KEYBOARD.SPACE:
-			return keyboard_check_pressed(vk_space);
+			return keyboard_check(vk_space);
 		case SBC_KEYBOARD.ESC:
-			return keyboard_check_pressed(vk_escape);
+			return keyboard_check(vk_escape);
 		case SBC_KEYBOARD.BACKSPACE:
-			return keyboard_check_pressed(vk_backspace);
+			return keyboard_check(vk_backspace);
 		case SBC_KEYBOARD.RETURN:
-			return keyboard_check_pressed(vk_return);
+			return keyboard_check(vk_return);
 		case SBC_KEYBOARD.TAB:
-			return keyboard_check_pressed(vk_tab);
+			return keyboard_check(vk_tab);
 		case SBC_KEYBOARD.UP:
-			return keyboard_check_pressed(vk_up);
+			return keyboard_check(vk_up);
 		case SBC_KEYBOARD.DOWN:
-			return keyboard_check_pressed(vk_down);
+			return keyboard_check(vk_down);
 		case SBC_KEYBOARD.LEFT:
-			return keyboard_check_pressed(vk_left);
+			return keyboard_check(vk_left);
 		case SBC_KEYBOARD.RIGHT:
-			return keyboard_check_pressed(vk_right);
+			return keyboard_check(vk_right);
 		case SBC_KEYBOARD.CONTROLL:
-			return keyboard_check_pressed(vk_lcontrol);
+			return keyboard_check(vk_lcontrol);
 		case SBC_KEYBOARD.CONTROLR:
-			return keyboard_check_pressed(vk_rcontrol);
+			return keyboard_check(vk_rcontrol);
 		case SBC_KEYBOARD.ALTL:
-			return keyboard_check_pressed(vk_lalt);
+			return keyboard_check(vk_lalt);
 		case SBC_KEYBOARD.ALTR:
-			return keyboard_check_pressed(vk_ralt);
+			return keyboard_check(vk_ralt);
 		case SBC_KEYBOARD.SHIFTL:
-			return keyboard_check_pressed(vk_lshift);
+			return keyboard_check(vk_lshift);
 		case SBC_KEYBOARD.SHIFTR:
-			return keyboard_check_pressed(vk_rshift);
+			return keyboard_check(vk_rshift);
 		case SBC_KEYBOARD.TILDE:
-			return keyboard_check_pressed(ord(0xC0));
+			return keyboard_check(96);
 		case SBC_KEYBOARD.MINUS:
-			return keyboard_check_pressed(0xBD);
+			return keyboard_check(0xBD);
 		case SBC_KEYBOARD.PLUS:
-			return keyboard_check_pressed(0xBB);
+			return keyboard_check(0xBB);
 		case SBC_KEYBOARD.BRACE_OPEN:
-			return keyboard_check_pressed(0xDB);
+			return keyboard_check(0xDB);
 		case SBC_KEYBOARD.BRACE_CLOSE:
-			return keyboard_check_pressed(0xDD);
+			return keyboard_check(0xDD);
 		case SBC_KEYBOARD.BACKSLASH:
-			return keyboard_check_pressed(0xDC);
+			return keyboard_check(0xDC);
 		case SBC_KEYBOARD.COLON:
-			return keyboard_check_pressed(0xBA);
+			return keyboard_check(0xBA);
 		case SBC_KEYBOARD.QUOTE:
-			return keyboard_check_pressed(0xDE);
+			return keyboard_check(0xDE);
 		case SBC_KEYBOARD.COMMA:
-			return keyboard_check_pressed(0xBC);
+			return keyboard_check(0xBC);
 		case SBC_KEYBOARD.PERIOD:
-			return keyboard_check_pressed(0xBE);
+			return keyboard_check(0xBE);
 		case SBC_KEYBOARD.QMARK:
-			return keyboard_check_pressed(0xBF);
+			return keyboard_check(0xBF);
 		case SBC_KEYBOARD.INSERT:
-			return keyboard_check_pressed(vk_insert);
+			return keyboard_check(vk_insert);
 		case SBC_KEYBOARD.HOME:
-			return keyboard_check_pressed(vk_home);
+			return keyboard_check(vk_home);
 		case SBC_KEYBOARD.DELETE:
-			return keyboard_check_pressed(vk_delete);
+			return keyboard_check(vk_delete);
 		case SBC_KEYBOARD.END:
-			return keyboard_check_pressed(vk_end);
+			return keyboard_check(vk_end);
 		case SBC_KEYBOARD.PGUP:
-			return keyboard_check_pressed(vk_pageup);
+			return keyboard_check(vk_pageup);
 		case SBC_KEYBOARD.PGDN:
-			return keyboard_check_pressed(vk_pagedown);
+			return keyboard_check(vk_pagedown);
 		case SBC_KEYBOARD.PAD_1:
-			return keyboard_check_pressed(vk_numpad1);
+			return keyboard_check(vk_numpad1);
 		case SBC_KEYBOARD.PAD_2:
-			return keyboard_check_pressed(vk_numpad2);
+			return keyboard_check(vk_numpad2);
 		case SBC_KEYBOARD.PAD_3:
-			return keyboard_check_pressed(vk_numpad3);
+			return keyboard_check(vk_numpad3);
 		case SBC_KEYBOARD.PAD_4:
-			return keyboard_check_pressed(vk_numpad4);
+			return keyboard_check(vk_numpad4);
 		case SBC_KEYBOARD.PAD_5:
-			return keyboard_check_pressed(vk_numpad5);
+			return keyboard_check(vk_numpad5);
 		case SBC_KEYBOARD.PAD_6:
-			return keyboard_check_pressed(vk_numpad6);
+			return keyboard_check(vk_numpad6);
 		case SBC_KEYBOARD.PAD_7:
-			return keyboard_check_pressed(vk_numpad7);
+			return keyboard_check(vk_numpad7);
 		case SBC_KEYBOARD.PAD_8:
-			return keyboard_check_pressed(vk_numpad8);
+			return keyboard_check(vk_numpad8);
 		case SBC_KEYBOARD.PAD_9:
-			return keyboard_check_pressed(vk_numpad9);
+			return keyboard_check(vk_numpad9);
 		case SBC_KEYBOARD.PAD_0:
-			return keyboard_check_pressed(vk_numpad0);
+			return keyboard_check(vk_numpad0);
 		case SBC_KEYBOARD.PAD_SUBTRACT:
-			return keyboard_check_pressed(vk_subtract);
+			return keyboard_check(vk_subtract);
 		case SBC_KEYBOARD.PAD_ADD:
-			return keyboard_check_pressed(vk_add);
+			return keyboard_check(vk_add);
 		case SBC_KEYBOARD.PAD_MULTIPLY:
-			return keyboard_check_pressed(vk_multiply);
+			return keyboard_check(vk_multiply);
 		case SBC_KEYBOARD.PAD_DIVIDE:
-			return keyboard_check_pressed(vk_divide);
+			return keyboard_check(vk_divide);
 		case SBC_KEYBOARD.PAD_ENTER:
-			return keyboard_check_pressed(vk_enter);
+			return keyboard_check(vk_enter);
 		case SBC_KEYBOARD.PAD_DECIMAL:
-			return keyboard_check_pressed(vk_decimal);
+			return keyboard_check(vk_decimal);
 		case SBC_KEYBOARD.F1:
-			return keyboard_check_pressed(0x70);
+			return keyboard_check(0x70);
 		case SBC_KEYBOARD.F2:
-			return keyboard_check_pressed(0x71);
+			return keyboard_check(0x71);
 		case SBC_KEYBOARD.F3:
-			return keyboard_check_pressed(0x72);
+			return keyboard_check(0x72);
 		case SBC_KEYBOARD.F4:
-			return keyboard_check_pressed(0x73);
+			return keyboard_check(0x73);
 		case SBC_KEYBOARD.F5:
-			return keyboard_check_pressed(0x74);
+			return keyboard_check(0x74);
 		case SBC_KEYBOARD.F6:
-			return keyboard_check_pressed(0x75);
+			return keyboard_check(0x75);
 		case SBC_KEYBOARD.F7:
-			return keyboard_check_pressed(0x76);
+			return keyboard_check(0x76);
 		case SBC_KEYBOARD.F8:
-			return keyboard_check_pressed(0x77);
+			return keyboard_check(0x77);
 		case SBC_KEYBOARD.F9:
-			return keyboard_check_pressed(0x78);
+			return keyboard_check(0x78);
 		case SBC_KEYBOARD.F10:
-			return keyboard_check_pressed(0x79);
+			return keyboard_check(0x79);
 		case SBC_KEYBOARD.F11:
-			return keyboard_check_pressed(0x7A);
+			return keyboard_check(0x7A);
 		case SBC_KEYBOARD.F12:
-			return keyboard_check_pressed(0x7B);
+			return keyboard_check(0x7B);
 		case SBC_KEYBOARD.F13:
-			return keyboard_check_pressed(0x7C);
+			return keyboard_check(0x7C);
 		case SBC_KEYBOARD.F14:
-			return keyboard_check_pressed(0x7D);
+			return keyboard_check(0x7D);
 		case SBC_KEYBOARD.F15:
-			return keyboard_check_pressed(0x7E);
+			return keyboard_check(0x7E);
 		case SBC_KEYBOARD.F16:
-			return keyboard_check_pressed(0x7F);
+			return keyboard_check(0x7F);
 		case SBC_KEYBOARD.F17:
-			return keyboard_check_pressed(0x80);
+			return keyboard_check(0x80);
 		case SBC_KEYBOARD.F18:
-			return keyboard_check_pressed(0x81);
+			return keyboard_check(0x81);
 		case SBC_KEYBOARD.F19:
-			return keyboard_check_pressed(0x82);
+			return keyboard_check(0x82);
 		case SBC_KEYBOARD.F20:
-			return keyboard_check_pressed(0x83);
+			return keyboard_check(0x83);
 		case SBC_KEYBOARD.F21:
-			return keyboard_check_pressed(0x84);
+			return keyboard_check(0x84);
 		case SBC_KEYBOARD.F22:
-			return keyboard_check_pressed(0x85);
+			return keyboard_check(0x85);
 		case SBC_KEYBOARD.F23:
-			return keyboard_check_pressed(0x86);
+			return keyboard_check(0x86);
 		case SBC_KEYBOARD.F24:
-			return keyboard_check_pressed(0x87);
+			return keyboard_check(0x87);
 	}
 }
 
@@ -465,220 +465,220 @@ function sbc_keyboard_released(keyboard_enum) {
 	sbc_initialize();
 	switch (keyboard_enum) {
 		case SBC_KEYBOARD.A:
-			return keyboard_check_released(ord("A"));
+			return keyboard_check(65);
 		case SBC_KEYBOARD.B:
-			return keyboard_check_released(ord("B"));
+			return keyboard_check(66);
 		case SBC_KEYBOARD.C:
-			return keyboard_check_released(ord("C"));
+			return keyboard_check(67);
 		case SBC_KEYBOARD.D:
-			return keyboard_check_released(ord("D"));
+			return keyboard_check(68);
 		case SBC_KEYBOARD.E:
-			return keyboard_check_released(ord("E"));
+			return keyboard_check(69);
 		case SBC_KEYBOARD.F:
-			return keyboard_check_released(ord("F"));
+			return keyboard_check(70);
 		case SBC_KEYBOARD.G:
-			return keyboard_check_released(ord("G"));
+			return keyboard_check(71);
 		case SBC_KEYBOARD.H:
-			return keyboard_check_released(ord("H"));
+			return keyboard_check(72);
 		case SBC_KEYBOARD.I:
-			return keyboard_check_released(ord("I"));
+			return keyboard_check(73);
 		case SBC_KEYBOARD.J:
-			return keyboard_check_released(ord("J"));
+			return keyboard_check(74);
 		case SBC_KEYBOARD.K:
-			return keyboard_check_released(ord("K"));
+			return keyboard_check(75);
 		case SBC_KEYBOARD.L:
-			return keyboard_check_released(ord("L"));
+			return keyboard_check(76);
 		case SBC_KEYBOARD.M:
-			return keyboard_check_released(ord("M"));
+			return keyboard_check(77);
 		case SBC_KEYBOARD.N:
-			return keyboard_check_released(ord("N"));
+			return keyboard_check(78);
 		case SBC_KEYBOARD.O:
-			return keyboard_check_released(ord("O"));
+			return keyboard_check(79);
 		case SBC_KEYBOARD.P:
-			return keyboard_check_released(ord("P"));
+			return keyboard_check(80);
 		case SBC_KEYBOARD.Q:
-			return keyboard_check_released(ord("Q"));
+			return keyboard_check(81);
 		case SBC_KEYBOARD.R:
-			return keyboard_check_released(ord("R"));
+			return keyboard_check(82);
 		case SBC_KEYBOARD.S:
-			return keyboard_check_released(ord("S"));
+			return keyboard_check(83);
 		case SBC_KEYBOARD.T:
-			return keyboard_check_released(ord("T"));
+			return keyboard_check(84);
 		case SBC_KEYBOARD.U:
-			return keyboard_check_released(ord("U"));
+			return keyboard_check(85);
 		case SBC_KEYBOARD.V:
-			return keyboard_check_released(ord("V"));
+			return keyboard_check(86);
 		case SBC_KEYBOARD.W:
-			return keyboard_check_released(ord("W"));
+			return keyboard_check(87);
 		case SBC_KEYBOARD.X:
-			return keyboard_check_released(ord("X"));
+			return keyboard_check(88);
 		case SBC_KEYBOARD.Y:
-			return keyboard_check_released(ord("Y"));
+			return keyboard_check(89);
 		case SBC_KEYBOARD.Z:
-			return keyboard_check_released(ord("Z"));
+			return keyboard_check(90);
 		case SBC_KEYBOARD.ROW_1:
-			return keyboard_check_released(ord("1"));
+			return keyboard_check(49);
 		case SBC_KEYBOARD.ROW_2:
-			return keyboard_check_released(ord("2"));
+			return keyboard_check(50);
 		case SBC_KEYBOARD.ROW_3:
-			return keyboard_check_released(ord("3"));
+			return keyboard_check(51);
 		case SBC_KEYBOARD.ROW_4:
-			return keyboard_check_released(ord("4"));
+			return keyboard_check(52);
 		case SBC_KEYBOARD.ROW_5:
-			return keyboard_check_released(ord("5"));
+			return keyboard_check(53);
 		case SBC_KEYBOARD.ROW_6:
-			return keyboard_check_released(ord("6"));
+			return keyboard_check(54);
 		case SBC_KEYBOARD.ROW_7:
-			return keyboard_check_released(ord("7"));
+			return keyboard_check(55);
 		case SBC_KEYBOARD.ROW_8:
-			return keyboard_check_released(ord("8"));
+			return keyboard_check(56);
 		case SBC_KEYBOARD.ROW_9:
-			return keyboard_check_released(ord("9"));
+			return keyboard_check(57);
 		case SBC_KEYBOARD.ROW_0:
-			return keyboard_check_released(ord("0"));
+			return keyboard_check(58);
 		case SBC_KEYBOARD.SPACE:
-			return keyboard_check_released(vk_space);
+			return keyboard_check(vk_space);
 		case SBC_KEYBOARD.ESC:
-			return keyboard_check_released(vk_escape);
+			return keyboard_check(vk_escape);
 		case SBC_KEYBOARD.BACKSPACE:
-			return keyboard_check_released(vk_backspace);
+			return keyboard_check(vk_backspace);
 		case SBC_KEYBOARD.RETURN:
-			return keyboard_check_released(vk_return);
+			return keyboard_check(vk_return);
 		case SBC_KEYBOARD.TAB:
-			return keyboard_check_released(vk_tab);
+			return keyboard_check(vk_tab);
 		case SBC_KEYBOARD.UP:
-			return keyboard_check_released(vk_up);
+			return keyboard_check(vk_up);
 		case SBC_KEYBOARD.DOWN:
-			return keyboard_check_released(vk_down);
+			return keyboard_check(vk_down);
 		case SBC_KEYBOARD.LEFT:
-			return keyboard_check_released(vk_left);
+			return keyboard_check(vk_left);
 		case SBC_KEYBOARD.RIGHT:
-			return keyboard_check_released(vk_right);
+			return keyboard_check(vk_right);
 		case SBC_KEYBOARD.CONTROLL:
-			return keyboard_check_released(vk_lcontrol);
+			return keyboard_check(vk_lcontrol);
 		case SBC_KEYBOARD.CONTROLR:
-			return keyboard_check_released(vk_rcontrol);
+			return keyboard_check(vk_rcontrol);
 		case SBC_KEYBOARD.ALTL:
-			return keyboard_check_released(vk_lalt);
+			return keyboard_check(vk_lalt);
 		case SBC_KEYBOARD.ALTR:
-			return keyboard_check_released(vk_ralt);
+			return keyboard_check(vk_ralt);
 		case SBC_KEYBOARD.SHIFTL:
-			return keyboard_check_released(vk_lshift);
+			return keyboard_check(vk_lshift);
 		case SBC_KEYBOARD.SHIFTR:
-			return keyboard_check_released(vk_rshift);
+			return keyboard_check(vk_rshift);
 		case SBC_KEYBOARD.TILDE:
-			return keyboard_check_released(ord(0xC0));
+			return keyboard_check(96);
 		case SBC_KEYBOARD.MINUS:
-			return keyboard_check_released(0xBD);
+			return keyboard_check(0xBD);
 		case SBC_KEYBOARD.PLUS:
-			return keyboard_check_released(0xBB);
+			return keyboard_check(0xBB);
 		case SBC_KEYBOARD.BRACE_OPEN:
-			return keyboard_check_released(0xDB);
+			return keyboard_check(0xDB);
 		case SBC_KEYBOARD.BRACE_CLOSE:
-			return keyboard_check_released(0xDD);
+			return keyboard_check(0xDD);
 		case SBC_KEYBOARD.BACKSLASH:
-			return keyboard_check_released(0xDC);
+			return keyboard_check(0xDC);
 		case SBC_KEYBOARD.COLON:
-			return keyboard_check_released(0xBA);
+			return keyboard_check(0xBA);
 		case SBC_KEYBOARD.QUOTE:
-			return keyboard_check_released(0xDE);
+			return keyboard_check(0xDE);
 		case SBC_KEYBOARD.COMMA:
-			return keyboard_check_released(0xBC);
+			return keyboard_check(0xBC);
 		case SBC_KEYBOARD.PERIOD:
-			return keyboard_check_released(0xBE);
+			return keyboard_check(0xBE);
 		case SBC_KEYBOARD.QMARK:
-			return keyboard_check_released(0xBF);
+			return keyboard_check(0xBF);
 		case SBC_KEYBOARD.INSERT:
-			return keyboard_check_released(vk_insert);
+			return keyboard_check(vk_insert);
 		case SBC_KEYBOARD.HOME:
-			return keyboard_check_released(vk_home);
+			return keyboard_check(vk_home);
 		case SBC_KEYBOARD.DELETE:
-			return keyboard_check_released(vk_delete);
+			return keyboard_check(vk_delete);
 		case SBC_KEYBOARD.END:
-			return keyboard_check_released(vk_end);
+			return keyboard_check(vk_end);
 		case SBC_KEYBOARD.PGUP:
-			return keyboard_check_released(vk_pageup);
+			return keyboard_check(vk_pageup);
 		case SBC_KEYBOARD.PGDN:
-			return keyboard_check_released(vk_pagedown);
+			return keyboard_check(vk_pagedown);
 		case SBC_KEYBOARD.PAD_1:
-			return keyboard_check_released(vk_numpad1);
+			return keyboard_check(vk_numpad1);
 		case SBC_KEYBOARD.PAD_2:
-			return keyboard_check_released(vk_numpad2);
+			return keyboard_check(vk_numpad2);
 		case SBC_KEYBOARD.PAD_3:
-			return keyboard_check_released(vk_numpad3);
+			return keyboard_check(vk_numpad3);
 		case SBC_KEYBOARD.PAD_4:
-			return keyboard_check_released(vk_numpad4);
+			return keyboard_check(vk_numpad4);
 		case SBC_KEYBOARD.PAD_5:
-			return keyboard_check_released(vk_numpad5);
+			return keyboard_check(vk_numpad5);
 		case SBC_KEYBOARD.PAD_6:
-			return keyboard_check_released(vk_numpad6);
+			return keyboard_check(vk_numpad6);
 		case SBC_KEYBOARD.PAD_7:
-			return keyboard_check_released(vk_numpad7);
+			return keyboard_check(vk_numpad7);
 		case SBC_KEYBOARD.PAD_8:
-			return keyboard_check_released(vk_numpad8);
+			return keyboard_check(vk_numpad8);
 		case SBC_KEYBOARD.PAD_9:
-			return keyboard_check_released(vk_numpad9);
+			return keyboard_check(vk_numpad9);
 		case SBC_KEYBOARD.PAD_0:
-			return keyboard_check_released(vk_numpad0);
+			return keyboard_check(vk_numpad0);
 		case SBC_KEYBOARD.PAD_SUBTRACT:
-			return keyboard_check_released(vk_subtract);
+			return keyboard_check(vk_subtract);
 		case SBC_KEYBOARD.PAD_ADD:
-			return keyboard_check_released(vk_add);
+			return keyboard_check(vk_add);
 		case SBC_KEYBOARD.PAD_MULTIPLY:
-			return keyboard_check_released(vk_multiply);
+			return keyboard_check(vk_multiply);
 		case SBC_KEYBOARD.PAD_DIVIDE:
-			return keyboard_check_released(vk_divide);
+			return keyboard_check(vk_divide);
 		case SBC_KEYBOARD.PAD_ENTER:
-			return keyboard_check_released(vk_enter);
+			return keyboard_check(vk_enter);
 		case SBC_KEYBOARD.PAD_DECIMAL:
-			return keyboard_check_released(vk_decimal);
+			return keyboard_check(vk_decimal);
 		case SBC_KEYBOARD.F1:
-			return keyboard_check_released(0x70);
+			return keyboard_check(0x70);
 		case SBC_KEYBOARD.F2:
-			return keyboard_check_released(0x71);
+			return keyboard_check(0x71);
 		case SBC_KEYBOARD.F3:
-			return keyboard_check_released(0x72);
+			return keyboard_check(0x72);
 		case SBC_KEYBOARD.F4:
-			return keyboard_check_released(0x73);
+			return keyboard_check(0x73);
 		case SBC_KEYBOARD.F5:
-			return keyboard_check_released(0x74);
+			return keyboard_check(0x74);
 		case SBC_KEYBOARD.F6:
-			return keyboard_check_released(0x75);
+			return keyboard_check(0x75);
 		case SBC_KEYBOARD.F7:
-			return keyboard_check_released(0x76);
+			return keyboard_check(0x76);
 		case SBC_KEYBOARD.F8:
-			return keyboard_check_released(0x77);
+			return keyboard_check(0x77);
 		case SBC_KEYBOARD.F9:
-			return keyboard_check_released(0x78);
+			return keyboard_check(0x78);
 		case SBC_KEYBOARD.F10:
-			return keyboard_check_released(0x79);
+			return keyboard_check(0x79);
 		case SBC_KEYBOARD.F11:
-			return keyboard_check_released(0x7A);
+			return keyboard_check(0x7A);
 		case SBC_KEYBOARD.F12:
-			return keyboard_check_released(0x7B);
+			return keyboard_check(0x7B);
 		case SBC_KEYBOARD.F13:
-			return keyboard_check_released(0x7C);
+			return keyboard_check(0x7C);
 		case SBC_KEYBOARD.F14:
-			return keyboard_check_released(0x7D);
+			return keyboard_check(0x7D);
 		case SBC_KEYBOARD.F15:
-			return keyboard_check_released(0x7E);
+			return keyboard_check(0x7E);
 		case SBC_KEYBOARD.F16:
-			return keyboard_check_released(0x7F);
+			return keyboard_check(0x7F);
 		case SBC_KEYBOARD.F17:
-			return keyboard_check_released(0x80);
+			return keyboard_check(0x80);
 		case SBC_KEYBOARD.F18:
-			return keyboard_check_released(0x81);
+			return keyboard_check(0x81);
 		case SBC_KEYBOARD.F19:
-			return keyboard_check_released(0x82);
+			return keyboard_check(0x82);
 		case SBC_KEYBOARD.F20:
-			return keyboard_check_released(0x83);
+			return keyboard_check(0x83);
 		case SBC_KEYBOARD.F21:
-			return keyboard_check_released(0x84);
+			return keyboard_check(0x84);
 		case SBC_KEYBOARD.F22:
-			return keyboard_check_released(0x85);
+			return keyboard_check(0x85);
 		case SBC_KEYBOARD.F23:
-			return keyboard_check_released(0x86);
+			return keyboard_check(0x86);
 		case SBC_KEYBOARD.F24:
-			return keyboard_check_released(0x87);
+			return keyboard_check(0x87);
 	}
 }
