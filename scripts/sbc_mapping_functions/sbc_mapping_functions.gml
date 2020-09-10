@@ -51,6 +51,7 @@ function sbc_mapping_add_kb(action, sbc_keyboard_enum) {
 }
 
 /// @desc Get gamepad mappings for given action, returns a ds list.
+/// @func sbc_mapping_get_gp(action)
 function sbc_mapping_get_gp(action) {
 	sbc_initialize();
 	var result = undefined;
@@ -65,6 +66,7 @@ function sbc_mapping_get_gp(action) {
 }
 
 /// @desc Get keyboard mappings for given action, returns a ds list.
+/// @func sbc_mapping_get_kb(action)
 function sbc_mapping_get_kb(action) {
 	sbc_initialize();
 	var result = undefined;
@@ -79,6 +81,7 @@ function sbc_mapping_get_kb(action) {
 }
 
 /// @desc Remove button from action mapping for gamepad, returns true if successful.
+/// @func sbc_mapping_remove_gp(action, sbc_gamepad_enum)
 function sbc_mapping_remove_gp(action, sbc_gamepad_enum) {
 	sbc_initialize();
 	var result = false;
@@ -97,6 +100,7 @@ function sbc_mapping_remove_gp(action, sbc_gamepad_enum) {
 }
 
 /// @desc Remove button from action mapping for keyboard, returns true if successful.
+/// @func sbc_mapping_remove_kb(action, sbc_keyboard_enum)
 function sbc_mapping_remove_kb(action, sbc_keyboard_enum) {
 	sbc_initialize();
 	var result = false;

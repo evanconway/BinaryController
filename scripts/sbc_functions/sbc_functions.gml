@@ -230,6 +230,7 @@ function sbc_determine_gp_or_kb() {
 }
 
 /// @desc Returns true/false if given action is down.
+/// @func sbc_down(action)
 function sbc_down(action) {
 	sbc_initialize();
 	sbc_determine_gp_or_kb();
@@ -258,6 +259,7 @@ function sbc_down(action) {
 }
 
 /// @desc Returns true/false if given action is pressed.
+/// @func sbc_pressed(action)
 function sbc_pressed(action) {
 	sbc_initialize();
 	with (global.simple_binary_controller) {
@@ -269,6 +271,7 @@ function sbc_pressed(action) {
 }
 
 /// @desc Returns true/false if given action is released
+/// @func sbc_released(action)
 function sbc_released(action) {
 	sbc_initialize();
 	with (global.simple_binary_controller) {

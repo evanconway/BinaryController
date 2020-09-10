@@ -1,4 +1,5 @@
 /// @desc Returns true if given gamepad_enum is down.
+/// @func sbc_gamepad_down(sbc_gamepad_enum)
 function sbc_gamepad_down(sbc_gamepad_enum) {
 	sbc_initialize();
 	with (global.simple_binary_controller) {
@@ -58,6 +59,7 @@ function sbc_gamepad_down(sbc_gamepad_enum) {
 
 /// @desc Returns the sbc_gamepad enum of the last button pressed, undefined if nothing pressed.
 // Note that this returns the highest enum button if multiple buttons are pressed.
+/// @func sbc_gamepad_lastpressed()
 function sbc_gamepad_lastpressed() {
 	sbc_initialize();
 	var result = undefined;
@@ -69,6 +71,7 @@ function sbc_gamepad_lastpressed() {
 }
 
 /// @desc Returns true if given gamepad_enum is pressed.
+/// @func sbc_gamepad_pressed(sbc_gamepad_enum)
 function sbc_gamepad_pressed(sbc_gamepad_enum) {
 	sbc_initialize();
 	with (global.simple_binary_controller) {
@@ -127,6 +130,7 @@ function sbc_gamepad_pressed(sbc_gamepad_enum) {
 }
 
 /// @desc Returns true if given gamepad_enum is released.
+/// @func sbc_gamepad_released(sbc_gamepad_enum)
 function sbc_gamepad_released(sbc_gamepad_enum) {
 	sbc_initialize();
 	with (global.simple_binary_controller) {
