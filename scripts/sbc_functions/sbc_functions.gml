@@ -1,8 +1,15 @@
-global.simple_binary_controller = instance_create_depth(0, 0, 0, o_simple_binary_controller);
+/// @desc Create the Simple Binary Controller if it does not already exist.
+function sbc_initialize() {
+	// The user does not need to call this script anywhere. Any script that would need it already calls it.
+	if (!variable_global_exists("simple_binary_controller") || global.simple_binary_controller == undefined || !instance_exists(global.simple_binary_controller)) {
+		global.simple_binary_controller = instance_create_depth(0, 0, 0, o_simple_binary_controller);
+	}
+}
 
 /// @desc Add new action to sbc_actions map.
 /// @func sbc_action_add(action, *group)
 function sbc_action_add(action) {
+	sbc_initialize();
 	with (global.simple_binary_controller) {
 		if (ds_map_exists(sbc_actions_prevdown, action)) {
 			show_debug_message("Simple Binary Controller action already exists!");
@@ -21,6 +28,7 @@ function sbc_determine_gp_or_kb() {
 
 	// Determine whether gamepad or keyboard is being used. Sets and returns sbc_gamepad_using.
 	// True means that the gamepad is being used, false means keyboard is being used.
+	sbc_initialize();
 	with (global.simple_binary_controller) {
 		/*
 		sbc_gamepad_using is set to undefined in the draw_gui_endstep. If has been defined for 
@@ -81,6 +89,7 @@ function sbc_determine_gp_or_kb() {
 
 /// @desc Returns true/false if given action is down.
 function sbc_down(action) {
+	sbc_initialize();
 	sbc_determine_gp_or_kb();
 	var result = false;
 	with (global.simple_binary_controller) {
@@ -108,6 +117,7 @@ function sbc_down(action) {
 
 /// @desc Returns true/false if given action is pressed.
 function sbc_pressed(action) {
+	sbc_initialize();
 	with (global.simple_binary_controller) {
 		if (!ds_map_exists(sbc_actions_prevdown, action)) {
 			show_error("sbc_pressed failed. Action does not exist!", true);
@@ -118,6 +128,7 @@ function sbc_pressed(action) {
 
 /// @desc Returns true/false if given action is released
 function sbc_released(action) {
+	sbc_initialize();
 	with (global.simple_binary_controller) {
 		if (!ds_map_exists(sbc_actions_prevdown, action))
 		{
