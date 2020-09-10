@@ -1,7 +1,6 @@
 /// @desc Add button to action mapping for gamepad, returns true if successful.
 /// @func sbc_mapping_add_gp(action, sbc_gamepad_enum, *resolve_conflicts)
 function sbc_mapping_add_gp(action, sbc_gamepad_enum) {
-	sbc_initialize();
 	var result = false;
 	with (global.simple_binary_controller) {
 		if (!ds_map_exists(sbc_mappings_gamepad, action)) {
@@ -27,7 +26,6 @@ function sbc_mapping_add_gp(action, sbc_gamepad_enum) {
 /// @desc Add key to action mapping for keyboard, returns true if successful.
 /// @func sbc_mapping_add_kb(action, sbc_keyboard_enum, *resolve_conflicts)
 function sbc_mapping_add_kb(action, sbc_keyboard_enum) {
-	sbc_initialize();
 	var result = false;
 	with (global.simple_binary_controller) {
 		if (!ds_map_exists(sbc_mappings_keyboard, action)) {
@@ -51,8 +49,8 @@ function sbc_mapping_add_kb(action, sbc_keyboard_enum) {
 }
 
 /// @desc Get gamepad mappings for given action, returns a ds list.
+/// @func function sbc_mapping_get_gp(action)
 function sbc_mapping_get_gp(action) {
-	sbc_initialize();
 	var result = undefined;
 	with (global.simple_binary_controller) {
 		if (!ds_map_exists(sbc_mappings_gamepad, action)) {
@@ -66,7 +64,6 @@ function sbc_mapping_get_gp(action) {
 
 /// @desc Get keyboard mappings for given action, returns a ds list.
 function sbc_mapping_get_kb(action) {
-	sbc_initialize();
 	var result = undefined;
 	with (global.simple_binary_controller) {
 		if (!ds_map_exists(sbc_mappings_keyboard, action)) {
@@ -80,7 +77,6 @@ function sbc_mapping_get_kb(action) {
 
 /// @desc Remove button from action mapping for gamepad, returns true if successful.
 function sbc_mapping_remove_gp(action, sbc_gamepad_enum) {
-	sbc_initialize();
 	var result = false;
 	with (global.simple_binary_controller) {
 		if (!ds_map_exists(sbc_mappings_gamepad, action)) {
@@ -98,7 +94,6 @@ function sbc_mapping_remove_gp(action, sbc_gamepad_enum) {
 
 /// @desc Remove button from action mapping for keyboard, returns true if successful.
 function sbc_mapping_remove_kb(action, sbc_keyboard_enum) {
-	sbc_initialize();
 	var result = false;
 	with (global.simple_binary_controller) {
 		if (!ds_map_exists(sbc_mappings_keyboard, action)) {

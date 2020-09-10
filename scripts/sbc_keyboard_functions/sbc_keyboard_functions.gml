@@ -1,6 +1,5 @@
 /// @desc Returns true/false for down state of given key_enum.
 function sbc_keyboard_down(keyboard_enum) {
-	sbc_initialize();
 	switch (keyboard_enum) {
 		case SBC_KEYBOARD.A:
 			return keyboard_check(ord("A"));
@@ -224,7 +223,6 @@ function sbc_keyboard_down(keyboard_enum) {
 /// @desc Returns the sbc_keyboard enum of the last key pressed, undefined if no key pressed.
 // Note that this returns the highest enum key if multiple keys are pressed.
 function sbc_keyboard_lastpressed() {
-	sbc_initialize();
 	var result = undefined;
 	// F24 is the final element in the enum
 	for (var i = 0; i <= SBC_KEYBOARD.F24; i++) {
@@ -235,7 +233,6 @@ function sbc_keyboard_lastpressed() {
 
 /// @desc Returns true/false for pressed state of given key_enum.
 function sbc_keyboard_pressed(keyboard_enum) {
-	sbc_initialize();
 	switch (keyboard_enum) {
 		case SBC_KEYBOARD.A:
 			return keyboard_check_pressed(ord("A"));
@@ -458,7 +455,6 @@ function sbc_keyboard_pressed(keyboard_enum) {
 
 /// @desc Returns true/false for released state of given key_enum.
 function sbc_keyboard_released(keyboard_enum) {
-	sbc_initialize();
 	switch (keyboard_enum) {
 		case SBC_KEYBOARD.A:
 			return keyboard_check_released(ord("A"));
